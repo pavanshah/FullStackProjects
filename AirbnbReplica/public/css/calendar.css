@@ -1,0 +1,57 @@
+.uib-datepicker-popup {
+	padding-bottom: 0;
+}
+.uib-daypicker:focus {
+	outline: none;
+}
+.uib-daypicker .fa-angle-left, .uib-daypicker .fa-angle-right {
+    font-size: 30px;
+}	
+.uib-daypicker button.uib-left, .uib-daypicker button.uib-right, .uib-daypicker .uib-title {
+	border: none;
+	background-color: #fff;
+	outline: none;
+}
+.uib-daypicker button.uib-left:focus, .uib-daypicker button.uib-right:focus, .uib-daypicker .uib-title {
+	outline: none;
+	background-color: #fff;
+}
+.uib-daypicker button.uib-left, .uib-daypicker button.uib-right{
+	color: #bbb;
+}
+.uib-daypicker .uib-title {
+	font-size: 14px;
+    line-height: 1.43;
+    color: #484848;
+}
+.uib-daypicker tbody {
+
+    border-top: 1px solid #ccc;
+}
+.uib-daypicker .uib-day .btn-sm {
+	color: #484848;
+	font-size: 14px;
+	font-weight: bold;
+}
+.uib-daypicker .uib-day span.text-muted {
+	color: #ccc;
+}
+.uib-daypicker .uib-day button {
+	border-radius: 0;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+.uib-button-bar {
+	display: none;
+}
+.uib-daypicker .uib-day .btn-default.active {
+	background-color: #fff;
+	box-shadow: none;
+}
+.uib-daypicker .uib-day .btn-default.active span {
+	color: #484848;
+}
+.uib-daypicker .uib-day .btn-default:hover, .uib-daypicker .uib-day .btn-default:focus, .uib-daypicker .uib-day .btn-default:active {
+	background-color: #ff5a5f;
+	color: #fff;
+}

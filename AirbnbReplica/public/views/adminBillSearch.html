@@ -1,0 +1,137 @@
+
+<br>
+<br>
+<br>
+
+<div class="container-fluid back">
+<md-toolbar md-scroll-shrink ng-if="true" style="background:#EF5350;">
+    <div class="md-toolbar-tools">
+      <h3>
+        <span>Bill History</span>
+      </h3>
+      <span flex></span>
+      <md-button class="md-raised" aria-label="Learn More">
+          <a href="#/admin">Admin Main Dashboard</a>
+        </md-button>
+        <md-button class="md-raised" aria-label="Learn More">
+          <a href="#/adminHostSearch">Hosts</a>
+        </md-button>
+    </div>
+  </md-toolbar>
+
+
+	<div class="row cardHost" style="margin-left:0px;margin-right:0px;margin-top:10px;padding-left:20px;">
+		<div class="col-md-3" style="padding-top:0px;">
+        <md-select ng-model="querytype" placeholder="Query By" class="md-no-underline" ng-change="vm.typeChanged()" >
+        
+          <md-option value="querydate">Date</md-option>
+          <md-option value="querymonth">Month</md-option>
+          
+        </md-select>
+        </div>        
+        <div class="col-md-6" style="padding-top:20px;" ng-if="showDate">
+        <md-datepicker ng-model="vm.date" md-placeholder="Enter bill date"></md-datepicker>
+        </div>        
+        <div class="col-md-6" ng-if="!showDate">
+	         <md-select ng-model="vm.month" placeholder="Bill Month" class="md-no-underline">
+        
+          <md-option value="1">January</md-option>
+          <md-option value="2">February</md-option>
+          <md-option value="3">March</md-option>
+          <md-option value="4">April</md-option>
+          <md-option value="5">May</md-option>
+          <md-option value="6">June</md-option>
+          <md-option value="7">July</md-option>
+          <md-option value="8">August</md-option>
+          <md-option value="9">September</md-option>
+          <md-option value="10">October</md-option>
+          <md-option value="11">November</md-option>
+          <md-option value="12">December</md-option>
+          
+        </md-select>
+        </div>
+        <div class="col-md-3" style="padding-top:20px;" >
+        <md-button ng-click="vm.searchDetails()" class="md-raised md-primary" style="width:80%;background:#EF5350;" >Search</md-button>
+        </div>
+	</div>
+	
+	<!--  <div class="row cardHost" ng-repeat="item in values">
+		<div class="col-md-2 text-center">
+		
+		<img src="http://placehold.it/50x50"  style="border-radius:50%;">
+		</div>
+		<div class="col-md-2 fonthost">
+			<p>{{item.firstname}}{{space}}{{ item.lastname}}</p>
+		</div>
+		<div class="col-md-2 fonthost">
+			<p>{{item.address.city}}</p>
+		</div>
+		<div class="col-md-2 fonthost">
+			<p>{{item.email}}</p>
+		</div>
+		<div class="col-md-2 fonthost text-center">
+			<p>{{item.UserType}}</p>
+		</div>
+		<div class="col-md-2" >
+			<md-button class="md-raised md-primary" ng-if="item.user_status != 'inactive'" ng-disabled="true">Authorized</md-button>
+			<md-button class="md-raised md-primary" ng-if="item.user_status == 'inactive'" ng-disabled="false">Unauthorized</md-button>
+		</div>		
+	</div> 
+	 -->
+	<md-content>
+    <md-list>
+    
+    <md-list-item class="md-3-line" style="background:#EF5350;min-height:45px;">
+        <div class="md-list-item-text text-center" style="padding-left:15px;padding-top:0px;padding-bottom:0px;">
+          <h3>Billing ID</h3>                    
+        </div>
+      	<div class="md-list-item-text" style="padding-left:0px;padding-top:0px;padding-bottom:0px;">
+          <h3></h3>                    
+        </div>
+        <div class="md-list-item-text" style="padding-left:0px;padding-top:0px;padding-bottom:0px;">
+          <h3>Billing Date</h3>          
+          
+        </div>
+        <div class="md-list-item-text" style="padding-left:0px;padding-top:0px;padding-bottom:0px;">
+          <h3>Property</h3>          
+          
+        </div>
+        <div class="md-list-item-text" style="padding-left:0px;padding-top:0px;padding-bottom:0px;">
+          <h3>Trip Amount</h3>          
+          
+        </div>           
+       <md-divider ></md-divider> 
+      </md-list-item>
+    
+      <md-list-item class="md-3-line" ng-repeat="item in values | limitTo:totalDisplayed" ng-click="showBill(item._id)">
+      <img src="./images/billinfo.jpg"  style="border-radius:30%;padding-top:20px;" height="60" width="60">
+      <div class="md-list-item-text" style="padding-left:15px;padding-top:15px;padding-bottom:15px;">
+          <h3>{{item.billing_id}}</h3>          
+          
+        </div>
+        <div class="md-list-item-text" style="padding-left:65px;padding-top:15px;padding-bottom:15px;">
+          <h3>{{item.billing_date}}</h3>          
+          
+        </div>
+        <div class="md-list-item-text" style="padding-left:15px;padding-top:15px;padding-bottom:15px;">
+          <h3>{{item.property.propertyTitle}}</h3>          
+          
+        </div>
+        <div class="md-list-item-text" style="padding-left:15px;padding-top:15px;padding-bottom:15px;">
+          <h3>{{item.trip_amount}}</h3>          
+          
+        </div>
+        <!-- <md-button class="md-secondary">Respond</md-button> -->
+        
+       <md-divider ></md-divider> 
+      </md-list-item>
+    </md-list>
+    <md-divider ></md-divider>
+     
+  </md-content>
+   <br>
+  <div class="text-center">
+  <md-button class="md-raised md-secondary" ng-click="showMore()" style="width:40%;background:#EF5350;color:white;" ng-show="fetchMore">Fetch more</md-button>
+  </div>
+  <br>
+</div>

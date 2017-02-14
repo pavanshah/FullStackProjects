@@ -1,0 +1,101 @@
+<br>
+ <br>
+ <br>
+<md-toolbar md-scroll-shrink ng-if="true" style="background:#EF5350;" class="mainDashBoard">
+    <div class="md-toolbar-tools">
+      <h3>
+      
+        <span>Admin Main Dashboard</span>
+      </h3>
+      <span flex></span>
+      <md-button class="md-raised" aria-label="Learn More">
+          <a href="#/adminHostSearch">Hosts</a>
+        </md-button>
+        <md-button class="md-raised" aria-label="Learn More">
+          <a href="#/adminBillSearch">Bill Details</a>
+        </md-button>
+    </div>
+  </md-toolbar>
+ <div class="container-fluid back">
+  	 	 
+ 
+	<div class="row cardDonut" >
+		<div class="col-md-6">
+			<nvd3 options="vm.donut1Options" data="vm.donut1Data"></nvd3>
+			<div class="text-center fontchange" >Total number of Users and Hosts</div>
+		</div>	 
+		<div class="col-md-6">
+			<nvd3 options="vm.donut2Options" data="vm.donut2Data"></nvd3>
+			<div class="text-center fontchange" >Pending Host Requests</div>
+		</div>
+		
+	 </div>
+ 
+ 	<div class="row card" >
+ 		<div class="col-md-6"> 
+			<br>
+			<br>
+			<br>			
+			<div>
+				 <nvd3 options="topHostsOptions" data="topHostsdata"></nvd3> 
+				<div class="text-center fontchange" >Top 10 Hosts based on revenue</div>	
+			</div>
+		</div>
+		<div class="col-md-6">
+		 	<br>
+			<br>
+			<br>					
+			<div>										
+		<nvd3 options="lineOptions"
+      data="lineData"
+      config="vm.config"></nvd3> 
+            
+      
+      <div class="text-center fontchange" >City wise Revenue</div>
+      
+			</div>
+		</div>
+	</div>
+	
+	<div class="row card" >
+ 		 <div class="row" style="margin-left:30px;margin-bottom:20px;">
+ 		 	
+ 		 	<md-input-container>
+	          <label>Year</label>
+	          <md-select ng-model="yearselected" ng-change="update()">
+	            <md-option><em>2016</em></md-option>
+	            <md-option><em>2015</em></md-option>
+	            
+	          </md-select>
+        	</md-input-container>
+ 		 </div>
+						
+					
+					
+				
+				<nvd3 options="barOptions"
+      data="barData"
+      config="vm.config"></nvd3>
+		<div class="text-center fontchange" >Top Properties with highest revenue</div>	
+		
+	</div> 
+	
+	<!-- <div class="row card" >
+ 		<div class="col-md-6"> 
+			<br>
+			<br>
+			<br>			
+			<div>		
+			test2		
+				<div id="chart" style="height: 500px;"><svg></svg></div>
+				<nvd3 options="vm.historicalOptions"
+      data="vm.historicalData"
+      config="vm.config2"></nvd3>
+			</div>
+		</div>
+	</div> -->
+	
+
+ </div> 
+ <br>
+ <br>

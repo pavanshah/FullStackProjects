@@ -1,0 +1,14 @@
+.background_host {
+     margin: 0;
+     background: url(../images/hostHomePage/home_background.jpg);
+     background-size: 1440px 800px;
+     background-repeat:no-repeat;
+    display: compact;
+     font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.hostProperty {
+     margin: 0;
+     background: url(../images/hostHomePage/host.jpg);
+     display: compact;
+     font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

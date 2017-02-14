@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Upload</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+          
+</head>
+<body>
+<!-- <input type="filepicker" name="myName" onchange="pick()"/> -->
+
+<input type="filepicker" data-fp-button-class ="btn btn-primary" data-fp-extensions=".png,.jpeg" data-fp-services="BOX,GOOGLE_DRIVE,COMPUTER" data-fp-multiple="true" data-fp-maxSize="10485760" data-fp-button-text="Upload Property Images" onchange="uploadFile()">
+<input type="filepicker" data-fp-button-class ="btn btn-primary" data-fp-extensions=".mp4" data-fp-services="BOX,GOOGLE_DRIVE,COMPUTER" data-fp-multiple="true" data-fp-maxSize="100485760" data-fp-button-text ="Upload Property Videos" onchange="uploadFile()">
+
+
+
+<script src="https://api.filestackapi.com/filestack.js"></script>
+<script type="text/javascript">
+ filepicker.setKey("Agm49GXXQQKecLwsP74odz");
+
+
+ function uploadFile(){
+
+ 		response = event.fpfile.url;
+ 		console.log(response);  //Example Response = https://cdn.filestackcontent.com/tgs6q0d2Qy4Hm35WcYqA
+
+       //Set the respone as Scope.URL and call the POST method using Angular
+       	
+
+
+ 	//alert(response);
+ }
+ 
+ 
+ /* var UploadFile = 
+
+ 	filepicker.pick({extensions: ['.jpg', '.png']},function(Blob){
+        console.log(JSON.stringify(Blob));
+  },function(FPError){
+    console.log(FPError.toString());
+  });*/
+
+ 		
+ 		//response = event.fpfile.url;
+ 		//console.log(response); //Example Response = https://cdn.filestackcontent.com/tgs6q0d2Qy4Hm35WcYqA
+
+       //Set the respone as Scope.URL and call the POST method using Angular
+
+
+
+ 	//alert(response);
+ 
+ 
+</script>
+ 
+</body>
+</html>

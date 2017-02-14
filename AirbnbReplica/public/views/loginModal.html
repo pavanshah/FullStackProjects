@@ -1,0 +1,41 @@
+<!-- 
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+</div> -->
+<div class="modal-body" id="modal-body">
+   <div class="width-100 login-options-wrap">
+   		<button class="text-center login-option fb" ><img class="media-icon" src="public/images/modal-images/fb.png">Log in with Facebook</button>
+   		<button class="text-center login-option google" ><img class="media-icon" src="public/images/modal-images/google.png">Log in with Google</button>	
+   </div>
+   <div class="or-wrapper text-center">
+   		<span class="or-text bold-font">or</span>
+   		<hr></hr>
+   </div>
+   <div class="login-form">
+   		<form name="loginForm" novalidate>
+   			<input type="email" name = "email" ng-model="vm.userData.email" class="email" placeholder="Email Address" required>
+   			<span class="invalidinput" ng-show="loginForm.email.$error.required && vm.required">Email is required</span>
+   			<span class="invalidinput" ng-show="loginForm.email.$error.email && vm.required">Not a valid email address</span>
+   				
+   			<input name = "password" ng-model = "vm.userData.password" type="password" class="pwd" placeholder="Password" required>
+   			<span class="invalidinput" ng-show="loginForm.password.$error.required && vm.required">Password is required</span>
+   			
+   			<div class="remember-forgot">
+   				<label for="rememberme" class="remember-checkbox">
+			        <input type="checkbox" id="rememberme" name="rememberme" >
+			        Remember me
+			    </label>
+			    <a href="#." class="forgot-link pull-right">Forgot password?</a>
+   			</div>
+   			<button class="modal-btn-primary" ng-click="vm.ok()">Log in</button>
+            <span class="invalidinput" ng-show="vm.serverError">{{vm.serverError}}</span>
+   		</form>
+   		<div class="custom-footer dont-have-account">
+   			<a href="#." class="">Don't have an account?</a>
+   			<button ng-click="vm.signUp()" class="pull-right btn-small">Sign up</button>
+   		</div>
+   </div>
+</div>
+<!-- <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="vm.ok()">OK</button>      
+</div> -->

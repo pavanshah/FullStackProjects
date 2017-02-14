@@ -1,0 +1,56 @@
+<br>
+<br>
+<br>
+	
+	<h1 style = "text-align: center;">AirBnB Clickstream Analysis</h1>	
+
+	<div class="row card">
+		<div class="col-md-8"> 
+			<nvd3 
+				options="vm.pageClickOptions"
+      			data="vm.clickData"
+      			config="vm.config">
+    		</nvd3>
+			<div class="text-center fontchange">Page Clicks(For Last 10 Days) For AirBnB</div>
+		</div>
+
+
+		<div class="col-md-4"> 
+			<nvd3 
+				options="vm.donutOptions"
+      			data="vm.donutData"
+      			config="vm.config">
+    		</nvd3>
+			<div class="text-center fontchange">Area Less Seen(Least visited pages)</div>
+		</div>
+
+	</div>
+
+
+	<h1 style = "text-align: center;">Host Property Analysis</h1>
+	
+	
+	<div class="row card">
+		<div class="col-md-6"> 
+			<nvd3 
+				options="vm.propertyClickOptions"
+      			data="vm.propertyData"
+      			config="vm.config">
+    		</nvd3>
+			<div class="text-center fontchange">Property Clicks Per Date(For Last 10 Days)</div>
+		</div>	
+
+		<div class="col-md-6"> 
+			<nvd3 
+				options="options"
+      			data="data"
+      			config="vm.config">
+    		</nvd3>
+			<div class="text-center fontchange">Average Rating/Time For Your Property</div>
+		</div>	
+	</div>
+
+
+	<h1 style = "text-align: center;">User Tracking Analysis</h1>
+
+</br>

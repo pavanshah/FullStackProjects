@@ -1,0 +1,84 @@
+<div class="modal-body" id="modal-body">
+   <div ng-switch="vm.signupView">
+      <section ng-switch-when="signupMethod">
+         <div class="width-100 login-options-wrap">
+         		<button class="text-center login-option fb" ><img class="media-icon" src="public/images/modal-images/fb.png">Log in with Facebook</button>
+         		<button class="text-center login-option google" ><img class="media-icon" src="public/images/modal-images/google.png">Log in with Google</button>	
+         </div>
+         <div class="or-wrapper text-center">
+         		<span class="or-text bold-font">or</span>
+         		<hr></hr>
+         </div>
+         <div class="login-options-wrap">
+         		<button class="modal-btn-primary login-option" ng-click="vm.changeSignupView('signupForm')"><img class="media-icon" src="public/images/modal-images/email.png">Sign up</button>
+         </div>
+         <p class="terms-n-condn">By signing up, I agree to Airbnb’s <a href="#."></a>Terms of Service</a>, <a href="#.">Nondiscrimination Policy</a>, <a href="#.">Payments Terms of Service</a>, <a href="#.">Privacy Policy</a>, <a href="#.">Guest Refund Policy</a>, and <a href="#.">Host Guarantee Terms.</a></p>
+         <div class="custom-footer">
+      		<span class="">Already have an Airbnb account?</span>
+      		<button ng-click="vm.login()" class="pull-right btn-small">Log In</button>
+      	</div>
+      </section>
+      <section ng-switch-when="signupForm" class="signup-form-wrapper">
+         <p class="text-center">Sign up with <a href="#.">Facebook</a> or <a href="#.">Google</a></p>
+         <div class="or-wrapper text-center">
+               <span class="or-text bold-font">or</span>
+               <hr></hr>
+         </div>
+         <div class="width-100">
+         
+      <form name="signupform" novalidate>
+               <input type="text" name="firstname" ng-model="vm.user.firstname" placeholder="First name" class="name-field" ng-pattern = "/^[a-zA-Z]{1,20}$/" ng-change="vm.initflag()" required>
+               <span class="invalidinput" ng-show="vm.firstnameflag && !signupform.firstname.$error.pattern">Firstname is required</span>
+               <span class="invalidinput" ng-show="signupform.firstname.$error.pattern">Text Input Only</span>
+               
+               <input type="text" name="lastname" ng-model="vm.user.lastname" placeholder="Last name" class="name-field" ng-pattern = "/^[a-zA-Z]{1,20}$/" ng-change="vm.initflag()" required>
+               <span class="invalidinput" ng-show="vm.lastnameflag && !signupform.lastname.$error.pattern">Lastname is required</span>
+               <span class="invalidinput" ng-show="signupform.lastname.$error.pattern">Text Input Only</span>
+               
+               <input type="email" name="email" ng-model="vm.user.email" placeholder="Email address" class="mail-field" ng-change="vm.initflag()" required>
+               <span class="invalidinput" ng-show="vm.emailflag && !signupform.email.$error.email">Email is required</span>
+               <span class="invalidinput" ng-show="signupform.email.$error.email">Email-id is invalid</span>
+               
+               <input type="password" name="password" ng-model = "vm.user.password" placeholder="Create a Password" class="pwd-field" ng-change="vm.initflag()" required>
+               <span class="invalidinput" ng-show="vm.passwordflag">Password is required</span>
+               
+               <div class="birthday-wrapper">
+                  <p class="bold-font">Birthday</p>
+                  <span><input type="date" name = "birthdate" ng-model="vm.user.birthdate" class="form-control check-in-box"  placeholder="birthdate" ng-change="vm.initflag()" required/></span>
+
+                  <span class="invalidinput" ng-show="vm.birthdayrequiredflag">Birthday is required</span>
+
+                  <span class="invalidinput" ng-show="vm.birthdayflag">Birthdate is invalid</span>
+               </div>
+
+               <div class="coupons-promotions-wrap">
+                  <label for="promotions" class="promotions-checkbox">
+                    <input type="checkbox" id="promotions" name="promotions" >
+                    I’d like to receive coupons, promotions, surveys, and updates via email about Airbnb and its partners.
+                   </label>
+                </div>
+
+                <div class="user-type-radio">
+                  <label for="userType">Sign up as:</label>
+                     <input type="radio" id="userType" ng-model="vm.user.UserType" name="userType" value="User"> User 
+                     <input type="radio" id="userType" ng-model="vm.user.UserType" selected name="userType" value="Host"> Host
+                  </label>
+               </div>
+            
+            <p class="terms-n-condn">By signing up, I agree to Airbnb’s <a href="#."></a>Terms of Service</a>, <a href="#.">Nondiscrimination Policy</a>, <a href="#.">Payments Terms of Service</a>, <a href="#.">Privacy Policy</a>, <a href="#.">Guest Refund Policy</a>, and <a href="#.">Host Guarantee Terms.</a></p>
+
+            <div class="login-options-wrap">
+               <button type = "button" class="modal-btn-primary login-option" ng-click="vm.ok()"><img class="media-icon" src="public/images/modal-images/email.png">Sign up</button>
+               <span class="invalidinput" ng-show="vm.serverError">{{vm.serverError}}</span>
+            </div>
+
+      </form>
+            
+            <div class="custom-footer">
+               <span class="">Already have an Airbnb account?</span>
+               <button ng-click="vm.login()" class="pull-right btn-small">Log In</button>
+            </div>
+         </div>
+      </section>
+   </div>
+</div>

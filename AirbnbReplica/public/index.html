@@ -1,0 +1,191 @@
+<html ng-app = "Airbnb">
+<head>
+	<title>AirBnB</title>
+	<link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css">	
+	<link rel="stylesheet" href="public/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="public/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="public/css/carousel.css">
+	<link rel="stylesheet" type="text/css" href="public/css/modal.css">
+	<link rel="stylesheet" type="text/css" href="public/css/calendar.css">
+	<link rel="stylesheet" type="text/css" href="public/css/admin.css">
+	<link rel="stylesheet" type="text/css" href="public/css/logout-popup.css">
+	<link rel="stylesheet" type="text/css" href="public/css/hostHomePage.css">
+	<link rel="stylesheet" type="text/css" href="public/css/property-details.css">
+	<link rel="stylesheet" href="/bower_components/angular-google-places-autocomplete/src/autocomplete.css">
+	
+	<link rel="stylesheet" type="text/css" href="../css/addproperty.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="public/css/normalize.css"> 
+	<link rel="stylesheet" type="text/css" href="public/css/star-rating.css">
+	<link rel="stylesheet" type="text/css" href="public/css/webkit-background-size.css">
+	<link type="text/css" rel="stylesheet" href="public/css/addPropertyGoogle.css">
+<link rel="stylesheet" type="text/css" href="/bower_components/angularjs-slider/dist/rzslider.css"/>
+<!-- kushal addded -->
+<link rel="stylesheet" type="text/css" href="public/css/mouche.css"> 
+<link rel="stylesheet" type="text/css" href="public/css/mouche1.css">
+<link rel="stylesheet" type="text/css" href="public/css/mouche2.css">
+<!--  link href="https://a2.muscache.com/airbnb/static/packages/common_o2.1-95d643eef69139392786405865038db8.css" media="all" rel="stylesheet" type="text/css" /-->
+<!--  link href="https://a1.muscache.com/airbnb/static/packages/common-e2aa11d9210d88c08eb62a0e67b5f554.css" media="all" rel="stylesheet" type="text/css" /-->
+<!--  link href="https://a1.muscache.com/airbnb/static/packages/address_widget-4f18ee66a37930ce1c93c8f33690c7b0.css" media="screen" rel="stylesheet" type="text/css" /><link href="https://a2.muscache.com/airbnb/static/packages/phonenumbers-67b13441cd68e5c9161e38a0dab88b54.css" media="screen" rel="stylesheet" type="text/css" /><link href="https://a2.muscache.com/airbnb/static/business_travel/quick_enroll-9fe44fac8aa94516d93764b9b4e57633.css" media="screen" rel="stylesheet" type="text/css" /><link href="https://a1.muscache.com/airbnb/static/packages/edit_profile-ac1fc053a07a8229d28854f4afdc24e6.css" media="screen" rel="stylesheet" type="text/css" /-->
+<!--  link rel="image_src" href="https://a2.muscache.com/airbnb/static/logos/trips-og-200x200-a3be4fbbb3b6c5e758804438dea35adc.jpg"-->
+<!--  link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Airbnb"-->
+<!--  link rel="manifest"-->
+<!-- kushal addded -->
+
+
+<link type="text/css" rel="stylesheet" href="public/css/angular-material.css">
+
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script> 
+<script src="/bower_components/angular-animate/angular-animate.js"></script>
+<script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="/bower_components/angular-messages/angular-messages.js"></script>    
+<script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+
+
+<script type="text/javascript" src="/bower_components/angularjs-slider/dist/rzslider.js"></script> 
+
+    <script src="public/scripts/lib/filestack.js"></script>
+
+
+
+   
+    
+
+</head>
+<body ng-controller="MainController as vm">
+	<!-- Header -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar visible-xs"></span>
+	      </button>
+	      <a ng-click="vm.homeNavigation()" href=""> <img src="public/images/airbnb-logo.png" class="logo hidden-xs"></img></a>
+	    </div>
+	    <div class="search-section">
+		    <form class="">
+                <input type="text" class="hidden-xs" force-selection="true" g-places-autocomplete ng-model="vm.location" placeholder="Where to?" ng-disabled="vm.user.UserType=='Admin'">
+                <img src="public/images/search-icon.png" alt="search-icon" class="search-icon hidden-xs">
+                <!-- Open Search modal on click of btn for mobile resolution -->
+                <button class="visible-xs search-btn-mobile"><img src="public/images/search-icon-mobile.png" alt="search-icon" class="" ng-disabled="vm.user.UserType=='Admin'">Where to?</button>
+                
+		    </form>
+		</div>    
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse no-transition" id="bs-example-navbar-collapse-1">
+	    	<div class="hamburger-content">
+	    		<ul class="nav navbar-nav navbar-right">
+	    			<li class="visible-xs"><a href="#"><span>Home</span></a></li>
+	    			<li class="visible-xs"><a href="#"><span>Download the App</span></a></li>
+			        <li class="" ng-if="!vm.user.UserType"><a href="#/becomeahost"><span class="have-border">Become a Host</span></a></li>
+			        <li class="hidden-xs" ng-if="!vm.user.UserType"><a href="#"><span>Help</span></a></li>
+			        <li class="" ng-if="!vm.user.email" ng-click="vm.openSignupModal()"><a href=""><span>Sign Up</span></a></li>
+			        <li class="" ng-if="!vm.user.email" ng-click="vm.openLoginModal()"><a href=""><span>Log In</span></a></li>
+			        <li class="" ng-if="vm.user.email"><a href="" class="logout-popup-wrapper position-relative">
+			        	<img ng-if="vm.user.profilepic!=undefined" ng-src="{{vm.user.profilepic}}" height="30px" width="30px" style="border-radius:20px"><span ng-bind="vm.user.firstname"></span>
+		        		<div class="logout-popup position-absolute">
+			        		<ul class="clearfix">
+			        			<li ng-click="vm.profile()" ng-if="vm.user.UserType=='User' || vm.user.UserType=='user'">Edit Profile</li>
+			        			<li ng-click="vm.trips()" ng-if="vm.user.UserType=='User' || vm.user.UserType=='user'">Your Trips</li>
+			        			<li ng-click="vm.bids()" ng-if="vm.user.UserType=='User' || vm.user.UserType=='user'">Your Bids</li>
+			        			
+			        			<li ng-click="vm.logout()">Logout</li>
+			        		</ul>
+			        	</div>
+			        </a></li>
+			        <li class="visible-xs"><a href="#"><span>Discover</span></a></li>
+			        <li class="visible-xs"><a href="#"><span>Search</span></a></li>
+			        <li class="visible-xs"><a href="#"><span>How it Works</span></a></li>
+			        <li class="visible-xs"><a href="#"><span></span></a></li>
+			        <li class="visible-xs"><a href="#"><span>Help</span></a></li>
+		        </ul>
+	    	</div>	
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<div>
+		<ui-view></ui-view>
+
+	</div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJdY_Gm_kGsPXX7uTAhNvgdy5SQ__D7nc&libraries=places"></script>
+
+	
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script> -->
+<script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>		
+<script type="text/javascript" src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script type="text/javascript" src="bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="bower_components/daterange.js/src/daterange.js"></script>
+<script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script><!-- 
+
+<script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script> -->
+
+
+
+<script type="text/javascript" src="public/scripts/app.js"></script>
+<script type="text/javascript" src="public/scripts/property.service.js"></script>
+<script type="text/javascript" src="public/scripts/location.service.js"></script>
+<script type="text/javascript" src="public/scripts/bookingData.service.js"></script>
+<script type="text/javascript" src="public/scripts/login.service.js"></script>
+<script type="text/javascript" src="public/scripts/main.js"></script>
+<script type="text/javascript" src="public/scripts/main.controller.js"></script>
+<script type="text/javascript" src="public/scripts/home.controller.js"></script>
+<script type="text/javascript" src="public/scripts/viewListings.controller.js"></script>
+<script type="text/javascript" src="public/scripts/propertyDetails.controller.js"></script>
+<script type="text/javascript" src="public/scripts/auctionablePropertyDetails.controller.js"></script>
+<script type="text/javascript" src="public/scripts/loginModal.controller.js"></script>
+<script type="text/javascript" src="public/scripts/signupModal.controller.js"></script>
+<script type="text/javascript" src="public/scripts/admin.controller.js"></script>
+<script type="text/javascript" src="public/scripts/hostAnalytics.controller.js"></script>
+<script type="text/javascript" src="public/scripts/adminLogin.controller.js"></script>
+<script type="text/javascript" src="public/scripts/checkout.controller.js"></script>
+<script type="text/javascript" src="public/scripts/UpdateProfileController.js"></script>
+<script type="text/javascript" src="public/scripts/trips.service.js"></script>
+<script type="text/javascript" src="public/scripts/trips.controller.js"></script>
+<script type="text/javascript" src="public/scripts/adminHostSearch.controller.js"></script>
+<script type="text/javascript" src="public/scripts/AddPropertyController.js"></script>
+<script type="text/javascript" src="public/scripts/bill.controller.js"></script>
+<script type="text/javascript" src="public/scripts/orderSuccess.controller.js"></script>
+<script type="text/javascript" src="public/scripts/viewUserBids.controller.js"></script>
+
+<meta charset="utf-8">  <!-- it's important for d3.js -->
+<script src="bower_components/d3/d3.js"></script>
+<script src="bower_components/nvd3/build/nv.d3.js"></script>
+<script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+<link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css">
+
+<script src="bower_components/moment/moment.js"></script>
+
+
+<script type="text/javascript" src="public/scripts/becomeahost.controller.js"></script>
+<script type="text/javascript" src="public/scripts/hostprofile.controller.js"></script>
+
+<script type="text/javascript" src="public/scripts/adminBillSearch.controller.js"></script>
+
+<script type="text/javascript" src="public/scripts/hostProfilePhotoAndVideo.controller.js"></script>
+<script type="text/javascript" src="public/scripts/hostCard.controller.js"></script>
+<script type="text/javascript" src="public/scripts/hostHomePage.controller.js"></script>
+<script type="text/javascript" src="public/scripts/adminProfileView.controller.js"></script>
+<script type="text/javascript" src="public/scripts/adminBillView.controller.js"></script>
+<script type="text/javascript" src="public/scripts/hostRatingAndReviews.controller.js"></script>
+
+
+
+</body>
+</html>

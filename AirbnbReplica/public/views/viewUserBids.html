@@ -1,0 +1,95 @@
+  <style type="text/css">
+    .success{
+          background-color: #5cb85c;
+          color: #fff;
+    }
+
+    .danger{
+         background-color: #d9534f;
+         color: #fff;
+    }
+
+    .activeBid{
+              background-color: #337ab7;
+          color: #fff;
+    }
+  </style>
+
+  <br><br><br>
+  <div class="subnav hide-print">
+  <div class="page-container-responsive">
+    <ul class="subnav-list">
+     <!--  <li>
+        <a href="#" aria-selected="false" class="subnav-item" id="dashboard-item">Dashboard</a>
+      </li> -->
+      <li>
+        <a ui-sref="userHome" aria-selected="false" class="subnav-item cohosting-ml-tooltip-trigger" id="your-trips-item">Your Trips</a>
+      </li>
+      <li>
+           <a href="" aria-selected="false" class="subnav-item" id="your-bills-item" >Your Bills</a>
+      </li>
+      <li>
+        <a ui-sref="userProfile" aria-selected="false" class="subnav-item" id="user-profile-item">Profile</a>
+      </li>
+      <li>
+        <a ui-sref="viewUserBids" aria-selected="true" class="subnav-item" id="user-profile-item">Your Bids</a>
+      </li>
+       
+    </ul>
+  </div>
+</div>
+
+  <div class="page-container-responsive space-4">
+    <div id="your-trips-app-container">
+      
+        <div class="panel row space-top-4">
+        <div class="col-md-12" ng-if="vm.bids.length == 0 || vm.trips == ''">
+        <div class="col-md-1"></div>
+          <div class="col-md-10"><img src="public/images/notripsfound.png"></div>
+        <div class="col-md-1"></div>
+        </div>
+          <div class="col-md-12" ng-if="vm.bids.length != 0">
+
+            <h2> My Bids</h2>
+            <br>
+            <br>
+            <div class="row trip-detail" ng-repeat="bid in vm.bids">
+            <div>
+              <div class="col-md-6">
+                <!-- <h3>#{{$index + 1}}</h3><br>
+                <strong>{{trips.trip_id}}</strong> -->
+                <h3>{{bid.property.propertyTitle}}</h3>
+                
+                <img height="300" width="300" ng-src="{{bid.property.propertyPictures[0]}}">
+                <!-- <p>{{trips.property.description}}</p> -->
+                <br>
+                <br>
+              </div>
+              <div class="col-md-6">
+              <br><br><br>
+              <span><strong> Available from </strong></span>
+                <strong><p><span style="font-size: 20px;"></span>{{bid.property.property_start_date | date}} to {{bid.property.property_end_date | date}} </p></strong>
+               <span><strong> Bid date: {{bid.bid_date | date }} </strong></span>
+               <span>
+                  
+               </span>
+                <strong><p><span style="font-size: 20px;"> Bid Price: {{bid.bid_value | currency}}</span></p></strong>
+                <button class="btn " ng-class="{'btn-success success':bid.bid_status=='won','btn-danger danger':bid.bid_status=='lost','activeBid':bid.bid_status=='active'}">{{bid.bid_status | capitalize}}</button>               
+                <br> 
+                <br>
+
+              </div>
+              <div ng-if="($index+1) != vm.trips.length">
+              <hr style="width:80%; border-color:#ff7e82; margin-bottom:40px;"> 
+              </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+ 

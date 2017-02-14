@@ -1,0 +1,190 @@
+  <br><br><br>
+  <div class="subnav hide-print">
+  <div class="page-container-responsive">
+    <ul class="subnav-list">
+     <!--  <li>
+        <a href="#" aria-selected="false" class="subnav-item" id="dashboard-item">Dashboard</a>
+      </li> -->
+      <li>
+        <a ui-sref="userHome" aria-selected="true" class="subnav-item cohosting-ml-tooltip-trigger" id="your-trips-item">Your Trips</a>
+      </li>
+      <li>
+           <a href="" aria-selected="false" class="subnav-item" id="your-bills-item" >Your Bills</a>
+      </li>
+      <li>
+        <a ui-sref="userProfile" aria-selected="false" class="subnav-item" id="user-profile-item">Profile</a>
+      </li>
+       
+    </ul>
+  </div>
+</div>
+
+  <div class="page-container-responsive space-4">
+    <div id="your-trips-app-container">
+      
+        <div class="panel row space-top-4">
+        <div class="col-md-12" ng-if="vm.trips.length == 0 || vm.trips == ''">
+        <div class="col-md-1"></div>
+          <div class="col-md-10"><img src="public/images/notripsfound.png"></div>
+        <div class="col-md-1"></div>
+        </div>
+          <div class="col-md-12" ng-if="vm.trips.length != 0">
+
+            <h2> My Trips</h2>
+            <br>
+            <br>
+            <div class="row trip-detail">
+            <div ng-repeat = "trips in vm.trips | limitTo : vm.totalDisplayed track by $index ">
+              <div class="col-md-6">
+                <!-- <h3>#{{$index + 1}}</h3><br>
+                <strong>{{trips.trip_id}}</strong> -->
+                <h3>{{trips.property.propertyTitle}}</h3>
+                
+                <img src="{{trips.property.propertyPictures[0]}}" height="300" width="400">
+                <!-- <p>{{trips.property.description}}</p> -->
+                <br>
+                <br>
+              </div>
+              <div class="col-md-6">
+              <br><br><br>
+
+              <div class="row">
+                <div class="col-md-7">
+                  <strong><p><span style="font-size: 20px;"> Check-In Date: </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{trips.trip_start_date | date}}</p></strong>
+                <strong><p><span style="font-size: 20px;">Check-out Date: </span>&nbsp;{{trips.trip_end_date | date}}</p></strong>
+                </div>
+                <div class="col-md-5">
+                  <button class="btn btn-primary" ng-click="vm.tripBill($index)" style="width: 140px; height: 70px;">View Receipt</button>
+                </div>
+              </div>
+                <!-- <strong><p><span style="font-size: 20px;"> Check-In Date: </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{trips.trip_start_date | date}}</p></strong>
+                <strong><p><span style="font-size: 20px;">Check-out Date: </span>&nbsp;{{trips.trip_end_date | date}}</p></strong> -->
+                <strong><P><span style="font-size: 20px;"> Trip Cost: </span>{{trips.bill.trip_amount | currency}}</P></strong>
+                <strong><p> <span style="font-size: 20px;"> {{trips.qty}}&nbsp;&nbsp;{{trips.property.category}}&nbsp;&nbsp;booked</span></p></strong>
+                <!-- <strong><p>Category {{trips.property.category}}</p></strong>
+                <strong><p>Quantity {{trips.property.qty}}</p></strong> -->
+                <br> 
+                <br>
+
+                <div ng-if="trips.reviewDiv == 1 && trips.submitted == null">
+                  <span style="font-size: 150%;" uib-rating ng-model="trips.rate" max="vm.max" read-only="vm.isReadonly" on-hover="vm.hoveringOver(value)" on-leave="vm.overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span><br>
+                  <textarea ng-model="trips.review" style="font-size:18pt;height:120px;width:75%;"></textarea> <br>
+                  <button class="btn btn-primary" ng-click="vm.uploadPic($index)">Upload Photo</button>
+                  <button class="btn btn-primary" ng-click="vm.submitReview($index)">Submit</button>
+                  
+                  <br><br>
+                </div>
+
+                <div class="row">
+                <div class="col-md-12">
+                  
+                </div>
+                <div class="col-md-12">
+                  
+                </div>
+                <div ng-if="trips.rating == 0">
+                  <div ng-if="trips.reviewDiv == null || trips.reviewDiv == 0">
+                  <!-- <a href="" ng-click="vm.rateHost()"> -->
+                    <button class="btn btn-primary" ng-click="vm.rateHost($index)">Share Experience</button>
+                    <!-- <button class="btn btn-primary" ng-click="vm.rateHost()">Share Experience</button> -->
+                 <!-- </a> -->
+                 <br><br>
+                </div>
+                </div>
+                </div>
+
+                <div ng-if="trips.submitted == 1">
+                    <strong><h3> Review Submitted</h3></strong>
+                    <br><br>
+                  </div>
+                  <div ng-if="trips.submitted == 0">
+                    <strong><h3>Error in submitting review</h3></strong>
+                    <br><br>
+                  </div>
+                  <div class="row">
+                    
+                    <div class="col-md-4" ng-if="trips.photoFlag == 1">
+                      <img src="{{trips.photo}}" height="130" width="130">
+                    </div>
+
+                    <div class="col-md-8">
+                      <div ng-if="trips.rating ==1 ">
+                      <span style="font-size: 150%;" uib-rating ng-model="trips.rate" max="vm.max" read-only="true" on-hover="vm.hoveringOver(value)" on-leave="vm.overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+              
+                
+                <h2> {{trips.review}} </h2>
+                <br><br>
+                </div>
+                    </div>
+
+
+                  </div>
+            <!--     <div ng-if="trips.rating ==1 ">
+                  <span style="font-size: 150%;" uib-rating ng-model="trips.rate" max="vm.max" read-only="true" on-hover="vm.hoveringOver(value)" on-leave="vm.overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></span>
+         
+                
+                <h2> {{trips.review}} </h2>
+                <br><br>
+                </div> -->
+
+              </div>
+              <div ng-if="($index+1) != vm.trips.length">
+              <hr style="width:80%; border-color:#ff7e82; margin-bottom:40px;"> 
+              </div>
+              </div>
+                <div class="text-center">
+  <md-button class="md-raised md-secondary" ng-click="vm.showMore()" style="width:40%;background:#EF5350;color:white;" ng-show="vm.fetchMore">Fetch more</md-button>
+            </div>
+  
+                 
+
+<!--             <div class="row trip-detail">
+                  <div class="col-md-6">
+                    <strong> trip_id #2</strong>
+                    <h3>Trip.Property.PropertyTitle</h3>
+                    Property Image
+                    <img src="/public/images/room-list-images/room-1-b.png">
+                    <p>Trip.Property.description was awesome place</p>
+                    <br>
+                    <br>
+                  </div>
+                  <div class="col-md-6">
+                  <strong> Trip.start_date</strong>
+                  <strong> Trip.end_date</strong>
+
+                  <strong>Trip.Property.Category</strong>
+                  <strong>Trip.Room Quantity</strong>
+                  <h4>Booking amount</h4>
+                  <br> 
+                  <br>
+                  <br>
+                  <h2> Ratings and Review Rakhva hoy to ahiyan rakhi sakay </h2>
+                 </div>
+             </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="row no-trips">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="panel panel-your-trips space-top-4">
+              <div class="panel-body panel-body-your-trips">
+                <div class="title show-lg">Choose your next adventure
+                </div>
+                <div class="space-top-2 content">Invite friends to try Airbnb and you'll get $35 in travel credit when they take their first trip.
+                </div>
+                <div class="space-top-5 btn btn-large btn-primary btn-invite-friends">
+                  <a href="#">
+                    <div class="text-white invite">Invite Friends
+                    </div>
+                 </a>
+                </div>
+              </div>
+              <div class="pin no-trips-img">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+ 

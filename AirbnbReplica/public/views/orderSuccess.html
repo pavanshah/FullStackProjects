@@ -1,0 +1,63 @@
+<style type="text/css">
+ 
+ .success-message{
+   color: rgb(255, 90, 95);
+   font-size: -webkit-xxx-large;
+ }
+
+ .success-tick{
+   color: white;
+   background-color: #087b08 ;
+   border-radius: 37px;
+ }
+
+ .blue {
+   color: skyblue;
+ }
+
+ .margin-link{
+   margin-left: 3.5%;
+   margin-bottom: 40%;
+ }
+
+ .margin-bottom-10{
+   margin-bottom: 10%;
+ }
+</style>
+
+
+<div class="container-fluid">
+ <div class="row">
+   </div>
+   <div class="row">
+   </div>
+   <div class="row">
+   
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   
+   <div class="col-md-6">
+     <h1 ><span class="glyphicon glyphicon-lock success-message"></span> Thank you!</h1>
+
+     <h2 class="">Your booking is confirmed. </h2>
+
+     <h2 class="margin-bottom-10">Get your stuff and make your holiday perfect! </h2>
+      <!-- <h3>Total Cost : {{vm.totalCost | currency}}</h3> -->
+     <h2> <span class="glyphicon glyphicon-arrow-right success-message "></span><strong>What's next?</strong></h2>
+     <h4 class="margin-link">You can <a href="" ng-click="vm.userBill()"> view your bill here</a>!</h2>
+   </div>
+   <div class="col-md-6">
+   <img src="/public/images/checkout/final.gif" style="width:640px;height:400px">
+     <!-- <div class="jumbotron cart-summary">
+       <h3 class="cart-summary-heading"><strong>Cart Summary</strong> <small>{{vm.cartItems.length}} items</small></h3>
+
+       <h3><strong>Total Cost : {{vm.totalCost | currency}}</strong></h3>
+       <a class="btn btn-primary btn-large" ng-click="vm.checkOut()" style="width: 100%;"href="">Proceed to checkout</a>
+     </div> -->
+
+   </div>
+ </div>
+</div>

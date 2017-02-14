@@ -1,0 +1,101 @@
+.property-details-wrapper {
+	padding-top: 62px;
+	width: 100%;
+	display: block;
+	background-color: #fff;
+}
+.property-details-wrapper .link {
+	color: #008489;
+	cursor: pointer;
+	font-size: 18px;
+}
+.property-details-wrapper .link:hover {
+	text-decoration: underline;
+}
+.property-details-wrapper .property-banner {
+	width: 100%;
+	position: relative;
+	height: 402px;
+	background-image: url(../images/property-details/property-banner.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-color: #f5f5f5;
+}
+.property-details-wrapper .property-banner button.view-photo {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	border: 1px solid #c4c4c4;
+    background: white;
+    color: #484848;
+    padding: 7px 21px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.43;
+    border-radius: 4px;
+}
+.property-details-wrapper .custom-wrapper {
+	position: relative;
+}
+
+.property-details-wrapper .right-sliding-section {
+	position: absolute;
+	right: 0;
+	top: -40px;
+}
+@media (max-width: 991px) {
+	.property-details-wrapper .right-sliding-section {
+		position: relative;
+		right: 0;
+		top: 0px;
+	}
+}
+.property-details-wrapper .room-specification {
+	margin-bottom: 100px;
+	background-color: #fff;
+}
+.property-details-wrapper .right-sliding-section .top-label {
+	background-color: rgba(60,63,64,0.9);
+    border: 0;
+    color: #fff;
+    height: 40px;
+    padding: 6px 20px;
+    text-transform: capitalize;
+}
+.property-details-wrapper .right-sliding-section .check-in-out-sec {
+	border: 1px solid #ccc;
+	padding: 20px 20px;
+	background-color: #fff;
+}
+.property-details-wrapper .no-of-guest {
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+.right-sliding-section .check-in-out-sec .booking-btn .button-primary {
+	border-radius: 4px;
+	margin-top: 15px;
+}
+.right-sliding-section .check-in-out-sec .viewed-section {
+	font-size: 14px;
+	padding-right: 85px;
+}
+.room-content-desc-section .room-type .fa-star {
+    color: #bbb;
+}
+.room-content-desc-section .room-type .fa-star.rated {
+    color: #008489;
+}
+.room-content-desc-section .property-reviewer-img {
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+}
+.room-short-desc {
+	padding: 20px 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.room-specification .about-this-section {
+	padding: 20px 15px;
+	border-bottom: 1px solid #ccc;	
+}

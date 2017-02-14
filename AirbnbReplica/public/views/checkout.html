@@ -1,0 +1,146 @@
+<div class="container">
+	<div class="row">
+	</div>
+	<div class="row">
+		<br>
+		<br>
+		<br><br><br><br>
+		<div class="col-md-6">
+			<h2> {{vm.property.propertyTitle}} </h2>
+			<h3> {{vm.property.description}} </h3>
+
+			<h4> Start Date: {{vm.bookingDates.start_date | date}} </h4>
+			<h4> End Date : {{vm.bookingDates.end_date | date}}</h4>
+			<h4> Number of Rooms: {{vm.booking.qty}} </h4>
+			<h4> Base Price : {{vm.property.base_price | currency}} </h4>
+
+      <h3> Bill Details : </h3>
+      <h4> Total Stay {{vm.Bill_details.NumberOfDays }} Days</h4>
+      <h3> Surges </h3>
+
+      <h4> Base Cost: {{vm.Bill_details.base_bill | currency}} </h4>
+
+      <h4 ng-if="vm.Bill_details.HolidaySeason==true"> Holiday Season Surge: {{vm.Bill_details.holiday_surge | currency }} </h4>
+      <h4 ng-if=" vm.Bill_details.HolidaySeason==false && vm.Bill_details.weekend_surge!=0"> No. of Weekend Days : {{vm.Bill_details.NumberofWeekends}} </h4>
+      <h4 ng-if="vm.Bill_details.HolidaySeason==false && vm.Bill_details.weekend_surge!=0"> Weekend Surge : {{vm.Bill_details.weekend_surge | currency}} </h4> 
+
+      <h3 ng-if="vm.Bill_details.HolidaySeason==false && (vm.Bill_details.Monthly_Discount_Applicable==true || vm.Bill_details.Weekly_Discount_Applicable==true)"> Discounts </h3>
+
+      <h4 ng-if="vm.Bill_details.HolidaySeason==false&&vm.Bill_details.Monthly_Discount_Applicable==true"> Monthly Discount Rate : {{vm.Bill_details.monthly_discount}} % </h4>
+
+      <h4 ng-if="vm.Bill_details.HolidaySeason==false&&vm.Bill_details.Weekly_Discount_Applicable==true"> Weekly Discount Rate : {{vm.Bill_details.weekly_discount}} % </h4>
+
+      <h4 ng-if="vm.Bill_details.HolidaySeason==false&&vm.Bill_details.discount_amount!=0"> Total Discount : {{vm.Bill_details.discount_amount | currency}} </h4> 
+
+
+      <h4> Total Amount {{vm.Bill_details.Total_Bill | currency}} </h4>
+		</div>
+		<div class="col-md-6">
+              <form class="form-horizontal" novalidate>
+              <fieldset>
+                <div id="legend" class="payment-top" ><span>
+                  <legend class="">Payment <img class="header-list-right-payment" src="public/images/checkout/Dark Color/12.png">
+                   <img class="header-list-right-payment" src="public/images/checkout/Dark Color/11.png">
+                   <img class="header-list-right-payment" src="public/images/checkout/Dark Color/5.png">
+                  <img  class="header-list-right-payment" src="public/images/checkout/Dark Color/2.png">               
+                  <img class="header-list-right-payment" src="public/images/checkout/Dark Color/1.png">
+                  
+                  </legend></span>
+
+                </div>
+           
+                <!-- Name -->
+                <div class="control-group">
+                  <label for="username">Card Holder's Name</label>
+                  <div class="controls">
+                    <input type="text" id="username" name="username" ng-model="vm.cardName" placeholder="" class="credit-card-field"/>
+                    <span class="invalidinput" ng-show="vm.requiredNameFlag">Required Field</span>
+                    <span class="invalidinput" ng-show="vm.invalidNameFlag">Invalid Name</span>
+
+                    <div class="input-validation" style="display:inline;"></div>
+                  </div>
+                </div>
+           
+                <!-- Card Number -->
+                <div class="control-group">
+                  <label  for="cardNumber">Card Number</label>
+                  <div class="controls">
+                  <span>
+                    <input type="Number" id="email" ng-model="vm.cardNumber" name="cardNumber" placeholder="" class="input-xlarge credit-card-field" required/>
+                    <span class="invalidinput" ng-show="vm.requiredNumberFlag">Required Field</span>
+                    <span class="invalidinput" ng-show="vm.invalidNumberFlag">Invalid credit card number</span>
+
+           			<div class="input-validation" style="display:inline;"></div>
+                  </div>
+                </div>
+           
+                <!-- Expiry-->
+                <div class="control-group">
+                  <label  for="expiry_month">Card Expiry Date</label>
+                  <div class="custom" style="max-width:100px;">
+                  <label for="expiry_month" > Month / Year</label>
+                     <select class="credit-card-field1" name="vm.expiry_month" ng-model="vm.expirymonth" id="expiry_month" required>
+                     
+                      <option value="01">Jan (01)</option>
+                      <option value="02">Feb (02)</option>
+                      <option value="03">Mar (03)</option>
+                      <option value="04">Apr (04)</option>
+                      <option value="05">May (05)</option>
+                      <option value="06">June (06)</option>
+                      <option value="07">July (07)</option>
+                      <option value="08">Aug (08)</option>
+                      <option value="09">Sep (09)</option>
+                      <option value="10">Oct (10)</option>1
+                      <option value="11">Nov (11)</option>
+                      <option value="12">Dec (12)</option>
+                    </select>
+
+
+                    <select style="margin-left:105px; margin-top:-36;" class="credit-card-field1" name="expiry_year" ng-model="vm.expiryyear" id="expiry_year" required>
+                      <option value="17">2017</option>
+                      <option value="18">2018</option>
+                      <option value="19">2019</option>
+                      <option value="20">2020</option>
+                      <option value="21">2021</option>
+                      <option value="22">2022</option>
+                      <option value="23">2023</option>
+                    </select>
+                    
+                    <span class="invalidinput" ng-show="vm.requiredDateFlag">Required Field</span>
+
+                  </div>
+                </div>
+           
+                <!-- CVV -->
+                <div class="control-group">
+                  <label   for="password_cvv">Card CVV</label>
+                  <div class="controls">
+                    <input type="password" id="password_cvv" name="password_cvv" placeholder="" ng-model="vm.cvv" class="span2 credit-card-field" required>
+                  </div>
+
+                  <span class="invalidinput" ng-show="vm.requiredCVVFlag">Required Field</span>
+                </div>
+                <span class="invalidinput" ng-show="vm.invalidCVVFlag">Invalid CVV</span>
+          	
+                <!-- Submit -->
+                <br>
+                <div class="control-group">
+                  <div class="controls">
+                    <button class="btn btn-primary" ng-click="vm.bookProperty()">Pay Now</button>
+                  </div>
+                </div>
+           
+              </fieldset>
+            </form>
+
+           
+             
+         
+
+
+
+		</div>
+
+	</div>
+</div>
+

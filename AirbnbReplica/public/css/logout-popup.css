@@ -1,0 +1,55 @@
+.logout-popup-wrapper:hover .logout-popup{
+	display: block;
+}
+.logout-popup {
+	padding: 0 20px;
+}
+.logout-popup {
+	display: none;
+    width: 282px;
+    right: 5px;
+    top: 45px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.logout-popup:after, .logout-popup:before {
+	bottom: 100%;
+	left: 86%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.logout-popup:after:hover, .logout-popup:before:hover {
+	display: block;
+}
+.logout-popup:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #fff;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.logout-popup:before {
+	border-color: rgba(221, 221, 221, 0);
+	border-bottom-color: #ddd;
+	border-width: 11px;
+	margin-left: -11px;
+}
+.logout-popup ul {
+	height: initial;
+}
+.logout-popup ul li {
+	width: 100%;
+	border-right: 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    transition: padding ease .2s;
+    color: #333;
+}
+.logout-popup ul li:hover {
+	padding-left: 8px;
+}

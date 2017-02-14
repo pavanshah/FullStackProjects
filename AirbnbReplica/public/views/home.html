@@ -1,0 +1,437 @@
+<!-- main content -->
+		<!-- Hero content -->
+		<div class="hero-wrapper">
+			<div class="video-wrap">
+				<video preload="auto" loop="loop" class="hidden-xs" autoplay>
+				  <source src="https://cdn.filestackcontent.com/ROo1yXBQTAy4jVYxTWR5" type="video/mp4">
+				  <source src="https://a0.muscache.com/airbnb/static/P1-background-vid-compressed-2.webm" type="video/webm">
+				</video>
+				<ul class="visible-xs hero-slider">
+					<li>
+						<img src="public/images/hero-slider/slide-0.png">
+					</li>
+				</ul>
+			</div>
+			<div class="video-content">
+				<div class="play-content">
+					<h2 class="big-title text-center">LIVE THERE</h2>
+					<h4 class="text-center no-margin">Book homes from local hosts in 191+ countries and experience a place like you live there.</h4>
+					<div class="text-center">
+						<img src="public/images/play-icon.png" alt="Play video" class="play-icon">
+					</div>
+				</div>
+			</div>
+			<div class="hero-search-container">
+				<form name="checkInForm" novalidate>
+
+				<div class="row">
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-11 no-padding">
+								<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 no-padding common-div">
+									<!-- Open modal on input click for mobile resolution -->
+									<input type="text" class="source-input white-bg" g-places-autocomplete ng-model="vm.travelLocation" placeholder="Where to?">
+
+									<span class="invalidboldinput" ng-show="vm.requiredLocationFlag">Required Field</span>
+								</div>
+
+								<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs no-padding common-div check-in-out-sec white-bg">
+											<span class="glyphicon glyphicon-arrow-right pad-top-5"></span>
+
+											<span ng-class="{'focused-on':vm.checkInDatePopUp.opened}" class="in-out-btn" ng-click="vm.openCheckinDate()">
+											
+											<input type="text" name="location" class="form-control check-in-box" uib-datepicker-popup="{{vm.format}}" ng-model="vm.checkInDate" is-open="vm.checkInDatePopUp.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" datepicker-append-to-body="true" placeholder="Check In"/>
+											</span>
+
+											<span class="invalidboldinput" ng-show="vm.requiredCheckinDate"><br>Required Field</span>
+						        			<span class="invalidboldinput" ng-show="vm.invalidCheckinDate"><br>Invalid Check-In Date</span>
+				        		</div>
+
+				        		<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs no-padding common-div check-in-out-sec white-bg">	
+											<span class="glyphicon glyphicon-arrow-right pad-top-5"></span>
+											<span class="in-out-btn pad-top-5" ng-class="{'focused-on':vm.checkOutDatePopUp.opened}" class="in-out-btn" ng-click="vm.openCheckOutDate()">
+											<input type="text"  class="form-control check-in-box" uib-datepicker-popup="{{vm.format}}" ng-model="vm.checkOutDate" is-open="vm.checkOutDatePopUp.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" datepicker-append-to-body="true" placeholder="Check Out"/>
+											</span>
+								
+									<span class="remove-date">
+										<svg viewBox="0 0 12 12" data-reactid=".3.0.0.0.1.0.0.0.3.1"><path d="M11.53.47a.75.75 0 0 0-1.061 0l-4.47 4.47L1.529.47A.75.75 0 1 0 .468 1.531l4.47 4.47-4.47 4.47a.75.75 0 1 0 1.061 1.061l4.47-4.47 4.47 4.47a.75.75 0 1 0 1.061-1.061l-4.47-4.47 4.47-4.47a.75.75 0 0 0 0-1.061z" data-reactid=".3.0.0.0.1.0.0.0.3.1.0"></path></svg>
+									</span>
+
+
+									<span class="invalidboldinput" ng-show="vm.requiredCheckOutDate"><br>Required Field</span>
+						        	<span class="invalidboldinput" ng-show="vm.invalidCheckOutDate"><br>Invalid Check-Out Date</span>
+								</div>
+
+								<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs no-padding common-div  no-of-guest ">
+									
+			                                    <select ng-model="vm.qty" >
+			                                        <option selected="" value="1">1 Room</option>
+			                                        <option value="2" >2 Rooms</option>
+			                                        <option value="3" >3 Rooms</option>
+			                                        <option value="4" >4 Rooms</option>
+			                                        <option value="5" >5 Rooms</option>
+			                                        <option value="6" >6 Rooms</option>
+			                                        <option value="7" >7 Rooms</option>
+			                                        <option value="8" >8 Rooms</option>
+			                                        <option value="9" >9 Rooms</option>
+			                                        <!-- <option value="10" >10 Guests</option>
+			                                        <option value="11" >11 Guests</option>
+			                                        <option value="12" >12 Guests</option>
+			                                        <option value="13" >13 Guests</option>
+			                                        <option value="14" >14 Guests</option>
+			                                        <option value="15" >15 Guests</option>
+			                                        <option value="16" >16+ Guests</option> -->
+			                                    </select>
+			                               
+									<!-- <span class="guest-count focused-on pull-left">1 guest</span>
+									<i class="fa fa-caret-up pull-right" aria-hidden="true"></i>
+									<i class="fa fa-caret-down pull-right active" aria-hidden="true"></i>
+									<div class="filter-sec"> add class "open" to show div -->
+								<!-- 		<ul class="clearfix">
+											<li>
+												<div class="col-lg-8 col-md-8 col-sm-8 no-padding-left rest-text">
+													<span class="pull-left main-criteria">1 adult</span>
+													<span class="pull-right sub-criteria"></span>
+												</div>
+												<div class="col-lg-4 col-md-4 col-sm-4 no-padding inc-dec">
+													<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">-</span>
+													<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">+</span>
+												</div> 
+											</li>
+											<li>
+												<div class="col-lg-8 col-md-8 col-sm-8 no-padding-left rest-text">
+													<span class="pull-left main-criteria">0 children</span>
+													<span class="pull-right sub-criteria">age 2 - 12</span>
+												</div>
+												<div class="col-lg-4 col-md-4 col-sm-4 no-padding inc-dec">
+													<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">-</span>
+													<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">+</span>
+												</div> 
+											</li>
+											<li>
+												<div class="col-lg-8 col-md-8 col-sm-8 no-padding-left rest-text">
+													<span class="pull-left main-criteria">0 infants</span>
+													<span class="pull-right sub-criteria">under 2</span>
+												</div>
+												<div class="col-lg-4 col-md-4 col-sm-4 no-padding inc-dec">
+													<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">-</span>
+													<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">+</span>
+												</div> 
+											</li>
+										</ul>
+										<span class="pull-right close-link">close</span>
+									</div> -->	
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-1 no-padding">
+								<!-- btn for tab and desktop -->
+								<button class="button-primary guest-btn hidden-xs" ng-click="vm.searchListings()">Search</button>
+								<!-- btn for mobile -->
+								<button class="button-primary guest-btn visible-xs" ng-click="vm.searchListings()"><img src="public/images/search-icon-mobile.png"></button>
+							</div>
+					</form>
+				</div>
+
+			</div>
+		</div>	
+		<div class="custom-wrapper clearfix">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12 opp-wrapper make-table ">
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 no-padding opportunity-slider table-column">
+					<ul>
+						<li><img class="earn-opp-slide" src="public/images/opportunity-slider/slide-0.png" alt="Opportunity Slide"></li>
+					</ul>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding opportunity-form table-column mob-table">
+					<div class="mob-tab-cell">
+						<p class="opportunity-title">Hosting opens up a world of opportunity</p>
+						<h5>Earn money sharing your extra space with travelers.</h5>
+						<button class="btn-main btn-sec btn-padding width-100">See What You Can Earn</button>
+					</div>
+				</div>
+			</div>
+			<!-- Explore world start -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding explore-world-wrapper" ng-if="vm.auctionableProperties.length > 0">
+				<div class="title-part">
+					<h2 class="section-title text-center">Bid for the Experience</h2>
+					<h5 class="section-subtext text-center">See which Experiences are available for bidding</h5>
+				</div>
+				<div class="collage-section">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+					<!-- 	<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height newyork cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<h2 class="text-center bold-font">New York</h2>
+										<h2 class="text-center bold-font">Available from 21st Dec to 31st Jan</h2>
+										
+										<span class="price-tag"><sup class="h6 bold-font">&#8377;</sup><span class="h3 bold-font">Starts from</span></span>
+									</div>
+
+								</div>
+
+								<span class="price-tag"><sup class="h6 bold-font">&#8377;</sup><span class="h3 bold-font">5225</span></span>
+							</div>
+						</div> -->
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad-12 each-grid" ng-repeat="property in vm.auctionableProperties">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height by-carole cursor-pointer world-bg" ng-click="vm.goToAuctionableProperty(property)" back-img="{{property.propertyPictures[0] || '../images/explore-world/carole.png'}} ">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<div class="text-center user-dp-wrapper">
+											<img class="user-dp" src="public/images/explore-world/carole-dp.png" alt="carole">
+										</div>
+										<h3 class="text-center no-margin">Hosted by {{property.host.firstname || John}}</h3>
+										<h6 class="text-center no-margin" style="color: white">Available from</h6>
+										<h6 class="text-center no-margin" style="color: white">{{property.property_start_date | date}} to {{property.property_end_date | date}}</h6>
+										<span class="price-tag" style="position: relative;margin-left: -12px;margin-top: 36%;"><span class="h3 bold-font">Bidding Starts from</span></span>
+									</div>
+
+								</div>
+
+								<span class="price-tag"><sup class="h6 bold-font">&#36;</sup><span class="h3 bold-font">{{property.base_price}}</span></span>
+							</div>
+						</div>
+						<!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height hawaii cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<h2 class="text-center bold-font">Get some sun in Hawaii</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 hidden-xs pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height paris cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<h2 class="text-center bold-font">Paris</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 hidden-xs pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height barcelona cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<h2 class="text-center bold-font">Barcelona</h2>
+									</div>
+								</div>
+							</div>
+						</div> -->
+						<!-- <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height london cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<div class="text-center user-dp-wrapper">
+											<img class="user-dp" src="public/images/explore-world/peter-dp.png" alt="Peter">
+										</div>
+										<h3 class="text-center no-margin">Hosted by Peter & James</h3>
+										<h6 class="text-center no-margin">LONDON</h6>
+									</div>
+								</div>
+								<span class="price-tag"><sup class="h6 bold-font">&#8377;</sup><span class="h3 bold-font">10992</span></span>
+							</div>
+						</div> -->
+						<!-- <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 hidden-xs pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height london-2 cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<h2 class="text-center bold-font">London</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height san-francisco cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<h2 class="text-center bold-font">San Francisco</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height berlin cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<h2 class="text-center bold-font">Berlin</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 hidden-xs pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height budapest cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<h2 class="text-center bold-font">Fall in love in Budapest</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+ -->					</div>	
+				</div>	
+			</div>
+			<!-- Explore world end -->
+			<!-- Meet GuideBook start -->
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding explore-world-wrapper">
+				<div class="title-part">
+					<h2 class="section-title text-center">Meet Guidebooks</h2>
+					<h5 class="section-subtext text-center">Discover hundreds of local spots recommended by Airbnb hosts</h5>
+				</div>
+				<div class="collage-section">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+						<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height meet-san-francisco cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<h2 class="text-center bold-font">San Francisco</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height meet-newyork cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<h2 class="text-center bold-font">New York</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pad-12 each-grid">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding cons-height meet-london cursor-pointer world-bg">
+								<div class="make-table width-100">
+									<div class="table-column">
+										<h2 class="text-center bold-font">London</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs pad-12 text-center">
+							<button class="btn-main btn-padding see-guidebook">See All Guidebooks</button>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<!-- Meet GuideBook end -->
+		</div>
+		<div class="intro-slider hidden-xs">
+			<div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+			    
+			    <!-- Carousel items -->
+			    <div class="carousel-inner">
+			        <div class="active item">
+			        	<div class="make-table width-100 height-100">
+			        		<div class="table-column">
+			        			<h2 class="big-title text-center">BELONG ANYWHERE</h2>
+			        			<p class="h3 text-center">See how Airbnb hosts create a sense of belonging around the world</p>
+			        			<div class="text-center">
+									<img src="public/images/play-icon.png" alt="Play video" class="play-icon">
+								</div>
+			        		</div>
+			        	</div>
+			        </div>
+			        <div class="item">
+			        	<div class="make-table width-100 height-100">
+			        		<div class="table-column">
+			        			<h2 class="big-title text-center">INTRODUCING THE BÉLO</h2>
+			        			<p class="h3 text-center">The story of a symbol of belonging.</p>
+			        			<div class="text-center">
+									<img src="public/images/play-icon.png" alt="Play video" class="play-icon">
+								</div>
+			        		</div>
+			        	</div>
+			        </div>
+			        <div class="item">
+			        	<div class="make-table width-100 height-100">
+			        		<div class="table-column">
+			        			<img class="slide-banner" src="public/images/intro-slider/slide-content-img.png">
+			        			<div class="col-lg-3 col-md-3 col-sm-3 col-offset-1">
+			        				<img class="pull-right" src="public/images/intro-slider/create-symbol.png">
+			        			</div>
+			        			<div class="col-lg-7 col-md-7 col-sm-7">
+			        				<h2 class="create-l1 bold-font">Make Airbnb yours</h2>
+			        				<h2 class="create-l2 bold-font">Create your Symbol, Tell your Story</h2>
+			        			</div>
+			        		</div>
+			        	</div>
+			        </div>
+			        <div class="item">
+			        	<div class="make-table width-100 height-100">
+			        		<div class="table-column">
+			        			<div class="col-lg-6 col-md-6 col-sm-6 content-center">
+				        			<h2 class="big-title text-center">YOUR HOME, EVERYWHERE</h2>
+				        			<p class="h3 text-center">On Airbnb, every vacation rental feels like home. Find everything from luxury villas to family friendly apartments.</p>
+				        			<div class="text-center">
+										<img src="public/images/play-icon.png" alt="Play video" class="play-icon">
+									</div>
+								</div>
+			        		</div>
+			        	</div>
+			        </div>
+			    </div>
+			    <!-- Carousel nav -->
+			    <a class="carousel-control left" href="#carousel" data-slide="prev"><i class="fa fa-angle-left " aria-hidden="true"></i></a>
+			    <a class="carousel-control right" href="#carousel" data-slide="next"><i class="fa fa-angle-right " aria-hidden="true"></i></a>
+			</div>
+		</div>
+		<div class="col-lg-12 col-md-12 col-sm-12 hidden-xs no-padding community-section">
+				<div class="title-part">
+					<h2 class="section-title text-center">Our community</h2>
+				</div>
+				<div class="cards-section">
+					<div class="col-lg-3 col-md-3 col-sm-6 pad-12 type-1">
+						<div class="make-table width-100 height-100 create-card">
+							<div class="table-column hover-transparent">
+								<div class="text-center">
+			        				<img class="card-title-img" src="public/images/intro-slider/create-symbol.png">
+			        			</div>
+			        			<div class="text-center">
+			        				<img class="card-content-img" src="public/images/community-images/create-comm-tile.png">
+			        			</div>
+			        			<h3 class="text-center no-margin-bottom">Make Airbnb yours</h3>
+			        			<p class="text-center">Create your symbol, Tell your story</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 pad-12 type-2">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding height-100 travelling">
+							<div class="width-100 height-100 hover-transparent">
+								<div class="width-100 text-center">
+									<span class="card-title">Travelling</span>
+								</div>
+								<div class="card-content">
+									<h2 class="comm-card-title text-center">Garry & Lianne</h2>
+									<p class="comm-card-detail text-center">Across an ocean or across town, Garry & Lianne are always in search of local experiences.</p>
+									<p class="card-detail-link text-center">Learn more about travel on Airbnb.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 pad-12 type-2">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding height-100 business-travel">
+							<div class="width-100 height-100 hover-transparent">
+								<div class="width-100 text-center">
+									<span class="card-title">Business Travel</span>
+								</div>
+								<div class="card-content">
+									<h2 class="comm-card-title text-center">Airbnb for Business</h2>
+									<p class="comm-card-detail text-center">Feel at home, wherever your work takes you.</p>
+									<p class="card-detail-link text-center">Get your team on Airbnb.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-6 pad-12 type-2">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding height-100 hosting">
+							<div class="width-100 height-100 hover-transparent">
+								<div class="width-100 text-center">
+									<span class="card-title">Hosting</span>
+								</div>
+								<div class="card-content">
+									<h2 class="comm-card-title text-center">Patricia</h2>
+									<p class="comm-card-detail text-center">A professional photographer, Patricia loves helping guests explore Shanghai’s arts scene.</p>
+									<p class="card-detail-link text-center">Learn more about hosting on Airbnb.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>

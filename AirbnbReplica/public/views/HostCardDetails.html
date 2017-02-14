@@ -1,0 +1,67 @@
+
+<br>
+<br>
+<br>
+<br>
+<div class="col-md-4">
+<div class="background_host">
+<img src="https://a2.muscache.com/im/pictures/25624825/6ef8e934_original.jpg?aki_policy=xx_large" height="450" width="2000">
+</div>
+</div>
+<div class="row">
+                   
+  <br>
+<br>
+<br>
+<br>
+<br>
+<br>   
+<br>
+<br>
+      
+
+
+
+<div class="col-md-4">
+<div class="card">
+<span class="link-contrast">Save your Credit Card Details Here</span>
+<br>
+<md-content>
+    <!--  form name="userForm"-->
+      <div layout="column">
+      <div flex>
+      <br>
+      <md-input-container class="md-block" flex-gt-sm>
+          <label>Credit Card Number</label>
+          <input md-maxlength="16" required name="Card Number" ng-model="cardNumber" />
+		  <div ng-show="required">Name is required.</div>
+		  </md-input-container>
+      </div>
+    <div flex>
+    <br>
+   	<md-input-container class="md-block" flex-gt-sm>
+          <label>Expiry Date</label>
+          <input placeholder="YYYY/MM" required name="Expiry Date" ng-model="expiryDate" />
+		</md-input-container>
+    </div>
+	<div flex>
+	<br>
+    <md-input-container class="md-block" flex-gt-sm>
+          <label>Cvv</label>
+          <input  md-maxlength="3" required name="Card Number" ng-model="cvv" type="password"/>
+	</md-input-container>
+	</div>
+    </div>
+     <!--  /form-->
+  </md-content>
+  <button type="button" class="btn btn-primary btn-large" ng-click="saveCardDetails()">
+  Save my Card Details
+</button>
+</div>
+</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<style>
+    .card {
+    background-color: #00a699;
+}
+    
+    
+    
+</style> 
+
+  <body class="with-new-header has-epcot-header">
+  <div class="smart-banner" aria-hidden="true"></div>
+  <div id="header-filler"> </div>
+	<main id="site-content" role="main">
+      
+
+<div id="slash-host-container">
+    <div data-hypernova-key="slash_hostbundlejs">
+        <div class="slash-host-container">
+            <div class="header">
+                <div class="header__photo "></div>
+                <div class="page-container-responsive header-card">
+                    <div class="col-sm-12 col-md-6 col-lg-5 space-md-8 space-md-top-8 text-contrast bg-babu">
+                        <div class="row space-top-8 space-8">
+                            <div class="col-sm-offset-1 col-sm-10 col-lg-9 col-left">
+                                <h1 class="header-card__title"><strong>Earn money as an Airbnb host</strong></h1>
+                                <p class="header-card__body space-top-4 space-4">From saving for home repairs to taking a dream trip, hosts use extra income to fund their passions.</p>
+                                <a class="header-card__button btn btn-primary btn-large" id="header-sign-up-button" ng-click="vm.Starthost()"><span>Start Hosting</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="earning-estimation-container" >
+                <div class="page-container-responsive" >
+                    <div class="earning-estimation" >
+                        <div class="h2 space-4"><strong><span>What you could earn</span></strong></div>
+                        <div class="row earning-estimation__body">
+                            <div class="col-md-3 space-sm-4">
+                                <div class="room-type-selections">
+                                    <div>
+                                        <input type="radio" ng-model ="value" value="1" ng-change="vm.entireplacefunc(1)"/><span>Entire place</span></div>
+                                    <div>
+                                        <input type="radio" ng-model ="value" value="2" ng-change="vm.entireplacefunc(2)"/><span>Private room</span></div>
+                                    <div>
+                                        <input type="radio" ng-model ="value" value="3" ng-change="vm.entireplacefunc(3)" /><span>Shared room</span></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 space-sm-4">
+                                <div class="space-3 earning-estimation__location-input">
+                                    <div>
+                                      <input type="text" g-places-autocomplete ng-model="vm.travelLocation" placeholder="e.g. San Francisco"/>
+                                    </div>
+                                </div>
+                                <div class="select select-block earning-estimation__accommodation">
+                                    <select>
+                                        <option selected="" value="1">1 Guest</option>
+                                        <option value="2" >2 Guests</option>
+                                        <option value="3" >3 Guests</option>
+                                        <option value="4" >4 Guests</option>
+                                        <option value="5" >5 Guests</option>
+                                        <option value="6" >6 Guests</option>
+                                        <option value="7" >7 Guests</option>
+                                        <option value="8" >8 Guests</option>
+                                        <option value="9" >9 Guests</option>
+                                        <option value="10" >10 Guests</option>
+                                        <option value="11" >11 Guests</option>
+                                        <option value="12" >12 Guests</option>
+                                        <option value="13" >13 Guests</option>
+                                        <option value="14" >14 Guests</option>
+                                        <option value="15" >15 Guests</option>
+                                        <option value="16" >16+ Guests</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="va-middle">
+                                    <br>
+                                    <div ><strong mg-model="value" ng-if="vm.value==1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;300$</strong></div>
+                                    <div ><strong mg-model="value" ng-if="vm.value==2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;350$</strong></div>
+                                    <div ><strong mg-model="value" ng-if="vm.value==3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;200$</strong></div>
+                                        <br>
+                                        <div><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;weekly average</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-top-6" >
+                <div class="page-container-responsive" >
+                    <div class="text-branding text-center h4 how-hosting-works__title text-muted"><span>How Hosting Works</span></div>
+                    <div class="how-hosting-works__section space-top-6" >
+                        <div ><span class="how-hosting-works__section-label">1</span></div>
+                        <h2 ><strong >Sign up to host</strong></h2>
+                        <div class="how-hosting-works__section-sub-title" >Start by creating your listing. Itâ€™s like a profile page for your place.</div>
+                        <div class="row" >
+                            <div class="col-md-6 col-lg-4">
+                                <div ><i class="icon icon-home icon-size-2 text-babu space-top-4 info-item__icon"></i>
+                                    <div class="info-item__title space-2 space-top-2">Whatâ€™s in a listing?</div>
+                                    <div class="info-item__body">Youâ€™ll fill out a description, take and upload photos, and pick a price. Your listing helps guests get a sense of what your place is like.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4" >
+                                <div><i class="icon icon-group icon-size-2 text-babu space-top-4 info-item__icon"></i>
+                                    <div class="info-item__title space-2 space-top-2">Who can book</div>
+                                    <div class="info-item__body" >You set the availability and house rules for your listing. Host controls and calendar settings can help make hosting easier.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div data-reactid=".1igi7i9xj40.4.0.1:$0.3:$0.$2.0"><i class="icon icon-handshake icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.4.0.1:$0.3:$0.$2.0.0"></i>
+                                    <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.4.0.1:$0.3:$0.$2.0.1">Weâ€™re here to help</div>
+                                    <div class="info-item__body" data-reactid=".1igi7i9xj40.4.0.1:$0.3:$0.$2.0.2">From getting your home ready and choosing a price, to understanding your responsibilities under local laws â€” weâ€™ve got tools and resources for you.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="how-hosting-works__section space-top-6" data-reactid=".1igi7i9xj40.4.0.1:$1">
+                        <div data-reactid=".1igi7i9xj40.4.0.1:$1.0"><span class="how-hosting-works__section-label" data-reactid=".1igi7i9xj40.4.0.1:$1.0.0">2</span></div>
+                        <h2 data-reactid=".1igi7i9xj40.4.0.1:$1.1"><strong data-reactid=".1igi7i9xj40.4.0.1:$1.1.0">Guests find your listing and book</strong></h2>
+                        <div class="how-hosting-works__section-sub-title" data-reactid=".1igi7i9xj40.4.0.1:$1.2">Youâ€™ll get a reservation confirmation and a message from your guest.</div>
+                        <div class="row" data-reactid=".1igi7i9xj40.4.0.1:$1.3:$0">
+                            <div class="col-md-6 col-lg-4" data-reactid=".1igi7i9xj40.4.0.1:$1.3:$0.$0">
+                                <div data-reactid=".1igi7i9xj40.4.0.1:$1.3:$0.$0.0"><i class="icon icon-comment icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.4.0.1:$1.3:$0.$0.0.0"></i>
+                                    <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.4.0.1:$1.3:$0.$0.0.1">Message your guests</div>
+                                    <div class="info-item__body" data-reactid=".1igi7i9xj40.4.0.1:$1.3:$0.$0.0.2">Messaging online and via the app helps you get to know guests and answer any questions.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4" data-reactid=".1igi7i9xj40.4.0.1:$1.3:$0.$1">
+                                <div data-reactid=".1igi7i9xj40.4.0.1:$1.3:$0.$1.0"><i class="icon icon-suitcase icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.4.0.1:$1.3:$0.$1.0.0"></i>
+                                    <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.4.0.1:$1.3:$0.$1.0.1">Plan for check-in</div>
+                                    <div class="info-item__body" data-reactid=".1igi7i9xj40.4.0.1:$1.3:$0.$1.0.2">Some hosts meet guests in person to hand over a key, others provide a door code. You choose what works for you.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="how-hosting-works__section space-top-6" data-reactid=".1igi7i9xj40.4.0.1:$2">
+                        <div data-reactid=".1igi7i9xj40.4.0.1:$2.0"><span class="how-hosting-works__section-label" data-reactid=".1igi7i9xj40.4.0.1:$2.0.0">3</span></div>
+                        <h2 data-reactid=".1igi7i9xj40.4.0.1:$2.1"><strong data-reactid=".1igi7i9xj40.4.0.1:$2.1.0">Welcome your guests</strong></h2>
+                        <div class="how-hosting-works__section-sub-title" data-reactid=".1igi7i9xj40.4.0.1:$2.2">Some hosts offer breakfast, others are more hands-off. How you host is up to you.</div>
+                        <div class="row" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0">
+                            <div class="col-md-6 col-lg-4" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$0">
+                                <div data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$0.0"><i class="icon icon-essentials icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$0.0.0"></i>
+                                    <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$0.0.1">Start with the basics</div>
+                                    <div class="info-item__body" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$0.0.2">Most hosts clean all the spaces a guest can use, and provide essentials like clean sheets, towels, and toilet paper.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$1">
+                                <div data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$1.0"><i class="icon icon-id-card-back icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$1.0.0"></i>
+                                    <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$1.0.1">How guests pay</div>
+                                    <div class="info-item__body" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$1.0.2">Airbnb handles all of the paymentsâ€”you never have to deal directly with money. Guests get charged before they arrive.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$2">
+                                <div data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$2.0"><i class="icon icon-money-deposit icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$2.0.0"></i>
+                                    <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$2.0.1">How you get paid</div>
+                                    <div class="info-item__body" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$0.$2.0.2">Some of the ways you can choose to get paid include Paypal, direct deposit, and international money wire. Your payment is automatically sent 24 hours after your guest checks in. Easy.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$1">
+                            <div class="col-md-6 col-lg-4" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$1.$0">
+                                <div data-reactid=".1igi7i9xj40.4.0.1:$2.3:$1.$0.0"><i class="icon icon-tag icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$1.$0.0.0"></i>
+                                    <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$1.$0.0.1">Earnings and fees</div>
+                                    <div class="info-item__body" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$1.$0.0.2">Listing your space on Airbnb is free. Airbnb takes a 3% host service fee on each reservation.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$1.$1">
+                                <div data-reactid=".1igi7i9xj40.4.0.1:$2.3:$1.$1.0"><i class="icon icon-filter icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$1.$1.0.0"></i>
+                                    <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$1.$1.0.1">What to charge</div>
+                                    <div class="info-item__body" data-reactid=".1igi7i9xj40.4.0.1:$2.3:$1.$1.0.2">What you charge is up to you. After you sign up, youâ€™ll get access to tools to set a price that factors in travel trends and prices for similar places.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-container-responsive space-top-6 space-8" data-reactid=".1igi7i9xj40.5">
+                <div class="trust-and-guarantee" data-reactid=".1igi7i9xj40.5.0">
+                    <h2 data-reactid=".1igi7i9xj40.5.0.0"><strong data-reactid=".1igi7i9xj40.5.0.0.0">Weâ€™ve got your back</strong></h2>
+                    <div class="text-normal trust-and-guarantee__sub-title" data-reactid=".1igi7i9xj40.5.0.1">Airbnb plans ahead to protect you and your home.</div>
+                    <div class="row" data-reactid=".1igi7i9xj40.5.0.2:$0">
+                        <div class="col-lg-3 col-md-6 col-sm-12" data-reactid=".1igi7i9xj40.5.0.2:$0.$0">
+                            <div data-reactid=".1igi7i9xj40.5.0.2:$0.$0.0"><i class="icon icon-host-guarantee icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.5.0.2:$0.$0.0.0"></i>
+                                <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.5.0.2:$0.$0.0.1">$1,000,000 Host Guarantee</div>
+                                <div class="info-item__body" data-reactid=".1igi7i9xj40.5.0.2:$0.$0.0.2">The Host Guarantee protects your home and your stuff from accidental damage. Every host with a listing on Airbnb is eligible for coverage at no additional cost. You donâ€™t have to do anything to sign up.</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12" data-reactid=".1igi7i9xj40.5.0.2:$0.$1">
+                            <div data-reactid=".1igi7i9xj40.5.0.2:$0.$1.0"><i class="icon icon-home-safety icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.5.0.2:$0.$1.0.0"></i>
+                                <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.5.0.2:$0.$1.0.1">Host Protection Insurance</div>
+                                <div class="info-item__body" data-reactid=".1igi7i9xj40.5.0.2:$0.$1.0.2">Host Protection Insurance is designed to protect you from liability in case your guests get hurt or cause property damage. Itâ€™s automatically included as part of your Airbnb account.</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12" data-reactid=".1igi7i9xj40.5.0.2:$0.$2">
+                            <div data-reactid=".1igi7i9xj40.5.0.2:$0.$2.0"><i class="icon icon-ok-alt icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.5.0.2:$0.$2.0.0"></i>
+                                <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.5.0.2:$0.$2.0.1">Airbnb is built on trust</div>
+                                <div class="info-item__body" data-reactid=".1igi7i9xj40.5.0.2:$0.$2.0.2">We require verified information from both hosts and guests, including phone numbers. After a trip, everyone gets a chance to write a review. Reviews keep guests accountable for treating hosts and their homes with respect.</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12" data-reactid=".1igi7i9xj40.5.0.2:$0.$3">
+                            <div data-reactid=".1igi7i9xj40.5.0.2:$0.$3.0"><i class="icon icon-lifesaver icon-size-2 text-babu space-top-4 info-item__icon" data-reactid=".1igi7i9xj40.5.0.2:$0.$3.0.0"></i>
+                                <div class="info-item__title space-2 space-top-2" data-reactid=".1igi7i9xj40.5.0.2:$0.$3.0.1">So much more than money</div>
+                                <div class="info-item__body" data-reactid=".1igi7i9xj40.5.0.2:$0.$3.0.2">Besides the extra income, hosts join a supportive worldwide community. There are always opportunities to learn from Airbnb and other hosts.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-top-8 hide-sm" data-reactid=".1igi7i9xj40.6">
+                <div class="video-slides air-slideshow" data-reactid=".1igi7i9xj40.6.0">
+                    <div class="video-thumbnail-container" source src="https://a2.muscache.com/airbnb/static/hear_from_hosts.mp4">
+                    <span>
+                    <div class="air-slide air-slide--active video-thumbnail1 background-cover">
+                    <div class="row row-table row-full-height text-center">
+                    <div class="col-middle col-md-10">
+                    <div class="h1 text-contrast">
+                    <strong>Hear from hosts, in their words</strong>
+                    </div>
+                    <i class="icon icon-video-play text-contrast text-jumbo"></i></div></div></div></span></div><a href="#" data-prevent-default="true" class="link-reset text-jumbo air-slideshow__prev" data-reactid=".1igi7i9xj40.6.0.1"><i class="icon text-contrast icon-chevron-left" data-reactid=".1igi7i9xj40.6.0.1.0"></i></a><a href="#" data-prevent-default="true" class="link-reset text-jumbo air-slideshow__next" data-reactid=".1igi7i9xj40.6.0.2"><i class="icon text-contrast icon-chevron-right" data-reactid=".1igi7i9xj40.6.0.2.0"></i></a></div>
+                <div class="video-section">
+                    <div class="video-player video-player--hidden" >
+                        <div class="row row-table row-full-height" >
+                            <div class="col-sm-12 col-middle text-center">
+                                <video preload="auto" loop="loop" class="hidden-xs">
+                                    <source src="https://a2.muscache.com/airbnb/static/hear_from_hosts.mp4" type="video/mp4"/>
+                                    <source src="https://a0.muscache.com/airbnb/static/hear_from_hosts.webm" type="video/webm"/>
+                                </video>
+                        </div>
+                    </div>
+                    <div class="video-player video-player--hidden">
+                        <div class="row row-table row-full-height">
+                            <div class="col-sm-12 col-middle text-center">
+                                <video preload="none" class="video video--active">
+                                    <source src="https://a0.muscache.com/airbnb/static/people_with_profiles.mp4" type="video/mp4"/>
+                                    <source src="https://a1.muscache.com/airbnb/static/people_with_profiles.webm" type="video/webm"/>
+                                </video><i class="video-player__play-icon icon icon-video-play icon-white" ></i><a data-prevent-default="true" class="video-player__close link-reset" href="#" ><i class="icon icon-remove" ></i></a></div>
+                        </div>
+                    </div>
+                    <div class="video-player video-player--hidden" data-reactid=".1igi7i9xj40.6.1.$2">
+                        <div class="row row-table row-full-height" data-reactid=".1igi7i9xj40.6.1.$2.0">
+                            <div class="col-sm-12 col-middle text-center" data-reactid=".1igi7i9xj40.6.1.$2.0.0">
+                                <video preload="none" class="video video--active" data-reactid=".1igi7i9xj40.6.1.$2.0.0.0">
+                                    <source src="https://a1.muscache.com/airbnb/static/protection_for_your_peace_of_mind.mp4" type="video/mp4" data-reactid=".1igi7i9xj40.6.1.$2.0.0.0.0" />
+                                    <source src="https://a2.muscache.com/airbnb/static/protection_for_your_peace_of_mind.webm" type="video/webm" data-reactid=".1igi7i9xj40.6.1.$2.0.0.0.1" />
+                                </video><i class="video-player__play-icon icon icon-video-play icon-white" data-reactid=".1igi7i9xj40.6.1.$2.0.0.1"></i><a data-prevent-default="true" class="video-player__close link-reset" href="#" data-reactid=".1igi7i9xj40.6.1.$2.0.0.2"><i class="icon icon-remove" data-reactid=".1igi7i9xj40.6.1.$2.0.0.2.0"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="video-player video-player--hidden" data-reactid=".1igi7i9xj40.6.1.$3">
+                        <div class="row row-table row-full-height" data-reactid=".1igi7i9xj40.6.1.$3.0">
+                            <div class="col-sm-12 col-middle text-center" data-reactid=".1igi7i9xj40.6.1.$3.0.0">
+                                <video preload="none" class="video video--active" data-reactid=".1igi7i9xj40.6.1.$3.0.0.0">
+                                    <source src="https://a2.muscache.com/airbnb/static/trust_makes_it_work.mp4" type="video/mp4" data-reactid=".1igi7i9xj40.6.1.$3.0.0.0.0" />
+                                    <source src="https://a0.muscache.com/airbnb/static/trust_makes_it_work.webm" type="video/webm" data-reactid=".1igi7i9xj40.6.1.$3.0.0.0.1" />
+                                </video><i class="video-player__play-icon icon icon-video-play icon-white" data-reactid=".1igi7i9xj40.6.1.$3.0.0.1"></i><a data-prevent-default="true" class="video-player__close link-reset" href="#" data-reactid=".1igi7i9xj40.6.1.$3.0.0.2"><i class="icon icon-remove" data-reactid=".1igi7i9xj40.6.1.$3.0.0.2.0"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="video-player video-player--hidden" data-reactid=".1igi7i9xj40.6.1.$4">
+                        <div class="row row-table row-full-height" data-reactid=".1igi7i9xj40.6.1.$4.0">
+                            <div class="col-sm-12 col-middle text-center" data-reactid=".1igi7i9xj40.6.1.$4.0.0">
+                                <video preload="none" class="video video--active" data-reactid=".1igi7i9xj40.6.1.$4.0.0.0">
+                                    <source src="https://a2.muscache.com/airbnb/static/express_yourself_with_profile.mp4" type="video/mp4" data-reactid=".1igi7i9xj40.6.1.$4.0.0.0.0" />
+                                    <source src="https://a1.muscache.com/airbnb/static/express_yourself_with_profile.webm" type="video/webm" data-reactid=".1igi7i9xj40.6.1.$4.0.0.0.1" />
+                                </video><i class="video-player__play-icon icon icon-video-play icon-white" data-reactid=".1igi7i9xj40.6.1.$4.0.0.1"></i><a data-prevent-default="true" class="video-player__close link-reset" href="#" data-reactid=".1igi7i9xj40.6.1.$4.0.0.2"><i class="icon icon-remove" data-reactid=".1igi7i9xj40.6.1.$4.0.0.2.0"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="video-player video-player--hidden" data-reactid=".1igi7i9xj40.6.1.$5">
+                        <div class="row row-table row-full-height" data-reactid=".1igi7i9xj40.6.1.$5.0">
+                            <div class="col-sm-12 col-middle text-center" data-reactid=".1igi7i9xj40.6.1.$5.0.0">
+                                <video preload="none" class="video video--active" data-reactid=".1igi7i9xj40.6.1.$5.0.0.0">
+                                    <source src="https://a1.muscache.com/airbnb/static/planning_for_arrival.mp4" type="video/mp4" data-reactid=".1igi7i9xj40.6.1.$5.0.0.0.0" />
+                                    <source src="https://a2.muscache.com/airbnb/static/planning_for_arrival.webm" type="video/webm" data-reactid=".1igi7i9xj40.6.1.$5.0.0.0.1" />
+                                </video><i class="video-player__play-icon icon icon-video-play icon-white" data-reactid=".1igi7i9xj40.6.1.$5.0.0.1"></i><a data-prevent-default="true" class="video-player__close link-reset" href="#" data-reactid=".1igi7i9xj40.6.1.$5.0.0.2"><i class="icon icon-remove" data-reactid=".1igi7i9xj40.6.1.$5.0.0.2.0"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="video-player video-player--hidden" data-reactid=".1igi7i9xj40.6.1.$6">
+                        <div class="row row-table row-full-height" data-reactid=".1igi7i9xj40.6.1.$6.0">
+                            <div class="col-sm-12 col-middle text-center" data-reactid=".1igi7i9xj40.6.1.$6.0.0">
+                                <video preload="none" class="video video--active" data-reactid=".1igi7i9xj40.6.1.$6.0.0.0">
+                                    <source src="https://a2.muscache.com/airbnb/static/getting_paid.mp4" type="video/mp4" data-reactid=".1igi7i9xj40.6.1.$6.0.0.0.0" />
+                                    <source src="https://a2.muscache.com/airbnb/static/getting_paid.webm" type="video/webm" data-reactid=".1igi7i9xj40.6.1.$6.0.0.0.1" />
+                                </video><i class="video-player__play-icon icon icon-video-play icon-white" data-reactid=".1igi7i9xj40.6.1.$6.0.0.1"></i><a data-prevent-default="true" class="video-player__close link-reset" href="#" data-reactid=".1igi7i9xj40.6.1.$6.0.0.2"><i class="icon icon-remove" data-reactid=".1igi7i9xj40.6.1.$6.0.0.2.0"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="video-player video-player--hidden" data-reactid=".1igi7i9xj40.6.1.$7">
+                        <div class="row row-table row-full-height" data-reactid=".1igi7i9xj40.6.1.$7.0">
+                            <div class="col-sm-12 col-middle text-center" data-reactid=".1igi7i9xj40.6.1.$7.0.0">
+                                <video preload="none" class="video video--active" data-reactid=".1igi7i9xj40.6.1.$7.0.0.0">
+                                    <source src="https://a2.muscache.com/airbnb/static/reviews_help_you_improve.mp4" type="video/mp4" data-reactid=".1igi7i9xj40.6.1.$7.0.0.0.0" />
+                                    <source src="https://a1.muscache.com/airbnb/static/reviews_help_you_improve.webm" type="video/webm" data-reactid=".1igi7i9xj40.6.1.$7.0.0.0.1" />
+                                </video><i class="video-player__play-icon icon icon-video-play icon-white" data-reactid=".1igi7i9xj40.6.1.$7.0.0.1"></i><a data-prevent-default="true" class="video-player__close link-reset" href="#" data-reactid=".1igi7i9xj40.6.1.$7.0.0.2"><i class="icon icon-remove" data-reactid=".1igi7i9xj40.6.1.$7.0.0.2.0"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-container-responsive footer space-8 space-top-8" data-reactid=".1igi7i9xj40.7">
+                <div class="row space-top-8" data-reactid=".1igi7i9xj40.7.0">
+                    <div class="col-lg-offset-3 col-md-offset-2 col-sm-offset-1 col-lg-5 col-md-7 col-sm-10" data-reactid=".1igi7i9xj40.7.0.0">
+                        <div class="h1 text-white"><strong><span>Get ready to meet your guests</span></strong></div><a href="/rooms/new?allow_logged_out=1" class="footer__button btn btn-primary btn-large space-top-6" id="footer-sign-up-button"><span>Start Hosting</span></a></div>
+                </div>
+                <div class="hand-key-image" data-reactid=".1igi7i9xj40.7.1"></div>
+            </div>
+        </div>
+    </div>
+    <script type="application/json" data-hypernova-key="slash_hostbundlejs">
+        <!--{"phrases":{"here_is_what_you_could_earn":"See what you could earn in %{city_name}","here_is_what_you_could_earn_no_city":"See what you could earn","nearby_hosting_info":"Join over %{hosting_number} %{line_break}%{city_name} hosts","nearby_hosting_info_v2":"Join hundreds of %{line_break}%{city_name} hosts","how_much_could_you_make":"See how much you could make renting your space on Airbnb","entire_place":"Entire Place","private_room":"Private Room","typical_hosts_make":"Per month, Airbnb hosts near here make an average of","price_estimate_explanation":"Monthly income is calculated by averaging the income for listings in this area that were active in the last three months. This is merely an estimate, and how much you actually make depends on pricing, the type and location of your listing, and other factors.","mini_model_price_estimate_explanation":"Estimate based on booking prices of listings with a similiar location, season, listing type, and guest capacity. How much you actually make may vary with your pricing, type and location of your listing, season, demand, and other factors.","list_your_space":"List Your Space","enter_location":"Enter a location","hosts_around_the_world":"Airbnb hosts, all around the world","autopricing_error":"Not enough data for this part of the map. Try a different area or zoom level.","autopricing_error_no_map_view":"The earnings calculator isnâ€™t working right now. Try refreshing the page.","wmpw.become_a_host_title_no_name":"Letâ€™s get you ready to become a host.","wmpw.become_a_host_title_with_name":"Hi, %{userName}! Letâ€™s get you ready to become a host.","wmpw.what_kind_of_place":"What kind of place do you have?","wmpw.number_of_guests":"for %{smart_count} guest |||| for %{smart_count} guests","wmpw.for_duration_week":"Listing for a week, we think you could earn","for_plural_weeks":"For %{smart_count} Week |||| For %{smart_count} Weeks","for_plural_month":"For %{smart_count} Month |||| For %{smart_count} Months","sign_up_button":"Sign Up to Host","cta_button_signed_in":"Start Hosting","header_card.title":"Earn money as an Airbnb host","header_card.title.san_diego":"Our guest room pays for our backyard oasis","header_card.title.seattle":"Our spare room financed our dream business","header_card.title.toronto":"My spare room funds my expeditions","header_card.body":"From saving for home repairs to taking a dream trip, hosts use extra income to fund their passions.","header_card.body_marketing":"Airbnb hosts earn money by sharing their homes with travelers.","cohost_promotion_banner.body_message":"Have spare space, but no time to host it? A local co-host can help.","cohost_promotion_banner.get_cohost":"Get a co-host","earning_estimation.title":"What you could earn in %{tag_start}%{location}%{tag_end}","earning_estimation.title.no_city":"What you could earn","earning_estimation.duration_text":"weekly average","earning_estimation.amount.error.title":"Not enough data.","earning_estimation.amount.error.body":"At least not yet. New local hosts like you help us gather more earnings data.","how_hosting_works.title":"How Hosting Works","how_hosting_works.load_more_button":"Learn more","how_hosting_works.step1.title":"Sign up to host","how_hosting_works.step1.sub_title":"Start by creating your listing. Itâ€™s like a profile page for your place.","how_hosting_works.step1.item1.title":"Whatâ€™s in a listing?","how_hosting_works.step1.item1.body":"Youâ€™ll fill out a description, take and upload photos, and pick a price. Your listing helps guests get a sense of what your place is like.","how_hosting_works.step1.item2.title":"Who can book","how_hosting_works.step1.item2.body":"You set the availability and house rules for your listing. Host controls and calendar settings can help make hosting easier.","how_hosting_works.step1.item3.title":"Weâ€™re here to help","how_hosting_works.step1.item3.body":"From getting your home ready and choosing a price, to understanding your responsibilities under local laws â€” weâ€™ve got tools and resources for you.","how_hosting_works.step2.title":"Guests find your listing and book","how_hosting_works.step2.sub_title":"Youâ€™ll get a reservation confirmation and a message from your guest.","how_hosting_works.step2.item1.title":"Message your guests","how_hosting_works.step2.item1.body":"Messaging online and via the app helps you get to know guests and answer any questions.","how_hosting_works.step2.item2.title":"Plan for check-in","how_hosting_works.step2.item2.body":"Some hosts meet guests in person to hand over a key, others provide a door code. You choose what works for you.","how_hosting_works.step3.title":"Welcome your guests","how_hosting_works.step3.sub_title":"Some hosts offer breakfast, others are more hands-off. How you host is up to you.","how_hosting_works.step3.item1.title":"Start with the basics","how_hosting_works.step3.item1.body":"Most hosts clean all the spaces a guest can use, and provide essentials like clean sheets, towels, and toilet paper.","how_hosting_works.step3.item2.title":"How guests pay","how_hosting_works.step3.item2.body":"Airbnb handles all of the paymentsâ€”you never have to deal directly with money. Guests get charged before they arrive.","how_hosting_works.step3.item3.title":"How you get paid","how_hosting_works.step3.item3.body":"Some of the ways you can choose to get paid include Paypal, direct deposit, and international money wire. Your payment is automatically sent 24 hours after your guest checks in. Easy.","how_hosting_works.step3.item4.title":"Earnings and fees","how_hosting_works.step3.item4.body":"Listing your space on Airbnb is free. Airbnb takes a 3% host service fee on each reservation.","how_hosting_works.step3.item5.title":"What to charge","how_hosting_works.step3.item5.body":"What you charge is up to you. After you sign up, youâ€™ll get access to tools to set a price that factors in travel trends and prices for similar places.","trust_and_guarantee.title":"Weâ€™ve got your back","trust_and_guarantee.sub_title":"Airbnb plans ahead to protect you and your home.","trust_and_guarantee.item1.title":"$1,000,000 Host Guarantee","trust_and_guarantee.item1.body":"The Host Guarantee protects your home and your stuff from accidental damage. Every host with a listing on Airbnb is eligible for coverage at no additional cost. You donâ€™t have to do anything to sign up.","trust_and_guarantee.item2.title":"Host Protection Insurance","trust_and_guarantee.item2.body":"Host Protection Insurance is designed to protect you from liability in case your guests get hurt or cause property damage. Itâ€™s automatically included as part of your Airbnb account.","trust_and_guarantee.item3.title":"Airbnb is built on trust","trust_and_guarantee.item3.body":"We require verified information from both hosts and guests, including phone numbers. After a trip, everyone gets a chance to write a review. Reviews keep guests accountable for treating hosts and their homes with respect.","trust_and_guarantee.item4.title":"So much more than money","trust_and_guarantee.item4.body":"Besides the extra income, hosts join a supportive worldwide community. There are always opportunities to learn from Airbnb and other hosts.","videos.video1.title":"Hear from hosts, in their words","videos.video2.title":"Airbnb is people with profiles","videos.video3.title":"Protection for your peace of mind","videos.video4.title":"Trust makes it work","videos.video5.title":"Express yourself with your profile","videos.video6.title":"Planning for arrival","videos.video7.title":"Getting paid","videos.video8.title":"Reviews help you improve","footer.title":"Get ready to meet your guests","subnav_title":"Earn %{tag_start}%{amount}%{tag_end} For Hosting %{smart_count} Week |||| Earn %{tag_start}%{amount}%{tag_end} For Hosting %{smart_count} Weeks","subnav_duration":"For %{smart_count} Week |||| For %{smart_count} Weeks"},"data":{"list_space_room_types_info":[{"value":"Entire home/apt","display_string":"Entire place","slug":"entire_home_apt"},{"value":"Private room","display_string":"Private room","slug":"private_room"},{"value":"Shared room","display_string":"Shared room","slug":"shared_room"}],"list_space_accommodates_info":[{"display_string":"1 Guest","request_string":"1","value":1},{"display_string":"2 Guests","request_string":"2","value":2},{"display_string":"3 Guests","request_string":"3","value":3},{"display_string":"4 Guests","request_string":"4","value":4},{"display_string":"5 Guests","request_string":"5","value":5},{"display_string":"6 Guests","request_string":"6","value":6},{"display_string":"7 Guests","request_string":"7","value":7},{"display_string":"8 Guests","request_string":"8","value":8},{"display_string":"9 Guests","request_string":"9","value":9},{"display_string":"10 Guests","request_string":"10","value":10},{"display_string":"11 Guests","request_string":"11","value":11},{"display_string":"12 Guests","request_string":"12","value":12},{"display_string":"13 Guests","request_string":"13","value":13},{"display_string":"14 Guests","request_string":"14","value":14},{"display_string":"15 Guests","request_string":"15","value":15},{"display_string":"16+ Guests","request_string":"16+","value":16}],"how_hosting_works":[{"title":"Sign up to host","sub_title":"Start by creating your listing. Itâ€™s like a profile page for your place.","items":[{"title":"Whatâ€™s in a listing?","body":"Youâ€™ll fill out a description, take and upload photos, and pick a price. Your listing helps guests get a sense of what your place is like.","icon_name":"home"},{"title":"Who can book","body":"You set the availability and house rules for your listing. Host controls and calendar settings can help make hosting easier.","icon_name":"group"},{"title":"Weâ€™re here to help","body":"From getting your home ready and choosing a price, to understanding your responsibilities under local laws â€” weâ€™ve got tools and resources for you.","icon_name":"handshake"}]},{"title":"Guests find your listing and book","sub_title":"Youâ€™ll get a reservation confirmation and a message from your guest.","items":[{"title":"Message your guests","body":"Messaging online and via the app helps you get to know guests and answer any questions.","icon_name":"comment"},{"title":"Plan for check-in","body":"Some hosts meet guests in person to hand over a key, others provide a door code. You choose what works for you.","icon_name":"suitcase"}]},{"title":"Welcome your guests","sub_title":"Some hosts offer breakfast, others are more hands-off. How you host is up to you.","items":[{"title":"Start with the basics","body":"Most hosts clean all the spaces a guest can use, and provide essentials like clean sheets, towels, and toilet paper.","icon_name":"essentials"},{"title":"How guests pay","body":"Airbnb handles all of the paymentsâ€”you never have to deal directly with money. Guests get charged before they arrive.","icon_name":"id-card-back"},{"title":"How you get paid","body":"Some of the ways you can choose to get paid include Paypal, direct deposit, and international money wire. Your payment is automatically sent 24 hours after your guest checks in. Easy.","icon_name":"money-deposit"},{"title":"Earnings and fees","body":"Listing your space on Airbnb is free. Airbnb takes a 3% host service fee on each reservation.","icon_name":"tag"},{"title":"What to charge","body":"What you charge is up to you. After you sign up, youâ€™ll get access to tools to set a price that factors in travel trends and prices for similar places.","icon_name":"filter"}]}],"trust_and_guarantee":{"title":"Weâ€™ve got your back","sub_title":"Airbnb plans ahead to protect you and your home.","items":[{"title":"$1,000,000 Host Guarantee","body":"The Host Guarantee protects your home and your stuff from accidental damage. Every host with a listing on Airbnb is eligible for coverage at no additional cost. You donâ€™t have to do anything to sign up.","icon_name":"host-guarantee"},{"title":"Host Protection Insurance","body":"Host Protection Insurance is designed to protect you from liability in case your guests get hurt or cause property damage. Itâ€™s automatically included as part of your Airbnb account.","icon_name":"home-safety"},{"title":"Airbnb is built on trust","body":"We require verified information from both hosts and guests, including phone numbers. After a trip, everyone gets a chance to write a review. Reviews keep guests accountable for treating hosts and their homes with respect.","icon_name":"ok-alt"},{"title":"So much more than money","body":"Besides the extra income, hosts join a supportive worldwide community. There are always opportunities to learn from Airbnb and other hosts.","icon_name":"lifesaver"}]},"input_placeholder":"e.g. San Francisco","videos":[{"title":"Hear from hosts, in their words","video_mp4":"https://a2.muscache.com/airbnb/static/hear_from_hosts.mp4","video_webm":"https://a0.muscache.com/airbnb/static/hear_from_hosts.webm"},{"title":"Airbnb is people with profiles","video_mp4":"https://a0.muscache.com/airbnb/static/people_with_profiles.mp4","video_webm":"https://a1.muscache.com/airbnb/static/people_with_profiles.webm"},{"title":"Protection for your peace of mind","video_mp4":"https://a1.muscache.com/airbnb/static/protection_for_your_peace_of_mind.mp4","video_webm":"https://a2.muscache.com/airbnb/static/protection_for_your_peace_of_mind.webm"},{"title":"Trust makes it work","video_mp4":"https://a2.muscache.com/airbnb/static/trust_makes_it_work.mp4","video_webm":"https://a0.muscache.com/airbnb/static/trust_makes_it_work.webm"},{"title":"Express yourself with your profile","video_mp4":"https://a2.muscache.com/airbnb/static/express_yourself_with_profile.mp4","video_webm":"https://a1.muscache.com/airbnb/static/express_yourself_with_profile.webm"},{"title":"Planning for arrival","video_mp4":"https://a1.muscache.com/airbnb/static/planning_for_arrival.mp4","video_webm":"https://a2.muscache.com/airbnb/static/planning_for_arrival.webm"},{"title":"Getting paid","video_mp4":"https://a2.muscache.com/airbnb/static/getting_paid.mp4","video_webm":"https://a2.muscache.com/airbnb/static/getting_paid.webm"},{"title":"Reviews help you improve","video_mp4":"https://a2.muscache.com/airbnb/static/reviews_help_you_improve.mp4","video_webm":"https://a1.muscache.com/airbnb/static/reviews_help_you_improve.webm"}],"ethnio_id":95725,"header_class":"","header_title_text":"Earn money as an Airbnb host","header_body_text":"From saving for home repairs to taking a dream trip, hosts use extra income to fund their passions.","show_login_signup_on_lys":true,"login_signup_type":"modal","experiments":{"slash_host_jp":false,"slash_host_cohost_promotion":false}},"trebuchets":{}}-->
+    </script>
+</div>
+
+
+    </main>
+
+      <div id="footer-promo-mount"></div>
+      <div id="footer" class="container-brand-light footer-surround footer-container">
+        <footer class="page-container-responsive footer-container" role="contentinfo">
+
+    <div class="row row-condensed">
+      <div class="language-curr-picker col-md-2">
+        <div class="clearfix">
+          <div class="language-picker col-sm-6 col-md-12"></div>
+            <div class="currency-picker col-sm-6 col-md-12"></div>
+          <div class="cx-number"></div>
+        </div>
+
+      </div>
+
+      <div class="col-md-2 col-md-offset-1 hide-sm">
+        <h2 class="h5">Airbnb</h2>
+        <ul class="list-layout">
+            <li><a class="link-contrast">About</a></li>
+            <li><a class="link-contrast">Careers</a></li>
+            <li><a class="link-contrast">Press</a></li>
+            <li><a class="link-contrast">Policies</a></li>
+            <li><a class="link-contrast">Help</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 col-md-offset-1 hide-sm">
+        <h2 class="h5">Discover</h2>
+        <ul class="list-layout">
+            <li><a href="/trust" class="link-contrast">Trust & Safety</a></li>
+            <li><a href="/invite?r=6" class="link-contrast">Travel Credit</a></li>
+              <li><a href="/gift?s=footer" class="link-contrast">Gift Cards</a></li>
+            <li><a href="https://www.airbnbaction.com?utm_source=airbnb&amp;utm_medium=footer&amp;utm_campaign=product" class="link-contrast" target="_blank">Airbnb Action</a></li>
+            <li><a href="/business-travel?s=footer" class="link-contrast">Business Travel</a></li>
+            <li><a href="/things-to-do" class="link-contrast">Guidebooks</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 col-md-offset-1 hide-sm">
+        <h2 class="h5">Hosting</h2>
+        <ul class="list-layout">
+            <li><a href="/host" class="link-contrast">Why Host</a></li>
+            <li><a href="/hospitality" class="link-contrast">Hospitality</a></li>
+            <li><a href="/help/responsible-hosting" class="link-contrast">Responsible Hosting</a></li>
+        </ul>
+      </div>
+    </div>
+
+      <hr class="footer-divider space-top-8 space-4 hide-sm">
+      <hr class="footer-divider show-sm">
+
+    <div class="footer-table">
+      <ul class="list-layout list-inline icon-list" itemscope itemtype="http://schema.org/Organization">
+        <i class='icon icon-airbnb-alt icon-gray belo-icon icon-size-2'></i>
+          <div class="text-muted">
+            &copy; Airbnb, Inc.
+          </div>
+      </ul>
+      <ul class="list-layout list-inline icon-list right-list" itemscope itemtype="http://schema.org/Organization">
+
+        <link itemprop="url" href="https://www.airbnb.com">
+        <meta itemprop="logo" content="https://a2.muscache.com/airbnb/static/logos/belo-200x200-4d851c5b28f61931bf1df28dd15e60ef.png">
+
+        <li><a href="/terms" class="link-contrast">Terms & Privacy</a></li>
+        <div class="hide-sm">
+          <li><a href="/sitemaps" class="link-contrast">Site Map</a></li>
+            <li>
+              <a href="https://www.facebook.com/airbnb" class="link-contrast footer-icon-container" itemprop="sameAs" target="_blank">
+                <span class="screen-reader-only">Facebook</span>
+                <i class='icon footer-icon icon-facebook'></i>
+</a>            </li>
+
+            <li>
+              <a href="https://twitter.com/airbnb" class="link-contrast footer-icon-container" itemprop="sameAs" target="_blank">
+                <span class="screen-reader-only">Twitter</span>
+                <i class='icon footer-icon icon-twitter'></i>
+</a>            </li>
+            <li>
+              <a href="https://instagram.com/airbnb" class="link-contrast footer-icon-container" itemprop="sameAs" target="_blank">
+                <span class="screen-reader-only">Instagram</span>
+                <i class='icon footer-icon icon-instagram'></i>
+</a>            </li>
+        </div>
+      </ul>
+    </div>
+</footer>
+</div>
+<div id="fb-root"></div>
+</body>
+
+<!-- ver. ab0eca76d6fbb80367af7c2bbafd6ce4587ae92f -->

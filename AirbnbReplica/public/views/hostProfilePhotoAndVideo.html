@@ -1,0 +1,117 @@
+<!--  script src="https://api.filestackapi.com/filestack.js"></script>
+<script type="text/javascript">
+ filepicker.setKey("Agm49GXXQQKecLwsP74odz");
+
+
+ function uploadFile(){
+
+ 		response = event.fpfile.url;
+ 		console.log(response);  
+}
+</script-->  	
+  	
+  	<br>
+    <br>
+    <br>   
+    <br>
+    <br>
+    <br> 
+ <div class="col-md-3 space-sm-4">
+      <div class="sidenav">
+  <ul class="sidenav-list">
+   <br>
+   <br>
+ 	 <li>
+      <a href="#/hostProfile" aria-selected="true" class="sidenav-item">Edit Profile</a>
+    </li>
+     <li>
+      <a  href="#/hostCardDetails"aria-selected="false" class="sidenav-item">Payment Methods</a>
+    </li>
+     <li>
+      <a  href="#/hostRatingAndReviews" aria-selected="false" class="sidenav-item">Rating,Reviews and Trips History</a>
+    </li>
+  </ul>
+</div>
+<a href="#/hostProfile" class="btn btn-block space-top-4">View Profile</a>
+    </div>
+<div class="page-container-responsive space-top-4 space-4">
+  <div class="row">
+   
+    <div class="col-md-9">
+    <div id="dashboard-content">
+   
+  
+<div class="panel space-6">
+  <div class="panel-header">
+    Profile Photo
+  </div>
+  <div class="panel-body photos-section">
+    <div class="row">
+    <img width="200" height="150" ng-src="{{vm.host.profilepic}}">
+      <div class="col-lg-8">
+		<p>
+          Clear frontal face photos are an important way for hosts and guests to learn about each other. It’s not much fun to host a landscape! Please upload a photo that clearly shows your face.
+        </p>
+	   <div class="row row-condensed">
+	   
+       <div class="col-md-6">
+        <button type="button" class="btn btn-primary" style="margin-left:5%" ng-click="vm.updateProfilePic()"> Update Picture </button>
+      </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel-header">
+      Profile Video
+  </div>
+<div class="card">
+    <a name="video-profile"></a>
+    <div id="video-container" class="row">
+      <div class="col-lg-7 space-md-4">
+        <div id="parent-video-container" class="panel panel-dark video col-middle text-center placeholder">
+          <div class="placeholder-content" ng-if="videoUpload">
+            <h4>
+              You haven’t recorded a video profile yet.
+            </h4>
+            <i class="icon icon-video icon-size-3"></i>
+          </div>
+          <iframe width="350" height="350" ng-src="{{video}}">
+          </iframe>
+        </div>
+      </div>
+      <div class="video-profile-tips col-lg-5">
+        <h3>Video Checklist </h3>
+        <ul id="video-checklist" class="checklist">
+          <li>We love close-ups, but we suggest you sit at arm’s length.
+          </li><li>You’ve got 30 seconds, so do your best to be concise.
+          </li><li>Try to keep the light in front of you, not behind you.
+          </li><li>Look into the camera to create that personal connection.
+          </li><li>You’ll get a chance to preview your video before it uploads.
+        </li></ul>
+       <button type="button" class="btn btn-primary" style="margin-left:5%" ng-click="updateHostVideo()"> Update Video </button>
+      </div>
+   
+    </div>
+      <div class="video-talking-points space-top-2">
+        <h3>Tell the community a little bit about yourself</h3>
+        <p>Start with your name and answer some of the following questions, or make up some of your own!</p>
+        <ul>
+          <li>Where are you from?
+          </li><li>What are some of your interests?
+          </li><li>What do you do in your spare time?
+          </li><li>What is a fun fact about yourself?
+          </li><li>What are some of your favorite things?
+        </li></ul>
+      </div>
+  </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    

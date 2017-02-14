@@ -1,0 +1,132 @@
+<!-- <html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/carousel.css">
+	<link rel="stylesheet" type="text/css" href="css/modal.css">
+	<link rel="stylesheet" type="text/css" href="css/property-details.css">
+</head>
+<body> -->
+	<div class="property-details-wrapper clearfix">
+		<div class="property-banner" style="background-image: url({{vm.property.propertyPictures[0]}}); background-size: cover;">
+			<button class="view-photo"></button>
+		</div>
+		<div class="custom-wrapper clearfix">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding room-specification">
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 no-padding room-content-desc-section">
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+						<h1>{{vm.property.propertyTitle}}</h1>
+						<p class="room-type">
+		        			<span>{{vm.property.address.formatted}}<!-- , {{vm.property.address.city}}, {{vm.property.address.country}} --></span>
+		        			<i class="fa fa-star rated" aria-hidden="true"></i>
+		        			<i class="fa fa-star rated" aria-hidden="true"></i>
+		        			<i class="fa fa-star rated" aria-hidden="true"></i>
+		        			<i class="fa fa-star rated" aria-hidden="true"></i>
+		        			<i class="fa fa-star" aria-hidden="true"></i>
+		        			<span>.19 reviews</span>
+		        		</p>
+					</div>	
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 pull-right">
+						<img class="property-reviewer-img" src="public/images/property-details/user.png">
+						<p class="">{{vm.property.host.firstname}}</p>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-short-desc">
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+							<p>{{vm.property.category}}</p>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+							<p>2 Guests per Room</p>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+							<p>{{vm.property.qty}} Bedroom</p>
+						</div>
+						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+							<p>1 Bed</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 no-padding right-sliding-section">
+					<div class="top-label">
+						<span class="pull-left" ng-if="vm.maxBid">{{vm.maxBid | currency}}</span>
+						<span class="pull-left" ng-if="!vm.maxBid">No bids placed yet</span>
+						<span class="pull-right">Highest Bid</span>
+					</div>
+					<div class="check-in-out-sec clearfix">
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-6">
+							<label for="checkin">Check In</label>
+							<!-- <input type="text" ng-disabled="true" ng-model="vm.availStartDate" class="form-control check-in-box" placeholder="Check in"/> -->
+							<span>{{vm.availStartDate | date}}</span>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-6">
+							<label for="checkin">Check Out</label>
+							<!-- <input type="text" ng-disabled="true" ng-model="vm.availEndDate" class="form-control check-in-box" placeholder="Check Out"/> -->
+							<span>{{vm.availEndDate | date}}</span>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-6">
+							<label>Guests</label>
+
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-6 common-div white-bg no-of-guest">
+								<span class="guest-count focused-on pull-left">1 guest</span>
+								<i class="fa fa-caret-up pull-right" aria-hidden="true"></i>
+								<i class="fa fa-caret-down pull-right active" aria-hidden="true"></i>
+								<div class="filter-sec"><!-- add class "open" to show div -->
+									<ul class="clearfix">
+										<li>
+											<div class="col-lg-8 col-md-8 col-sm-8 no-padding-left rest-text">
+												<span class="pull-left main-criteria">1 adult</span>
+												<span class="pull-right sub-criteria"></span>
+											</div>
+											<div class="col-lg-4 col-md-4 col-sm-4 no-padding inc-dec">
+												<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">-</span>
+												<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">+</span>
+											</div> 
+										</li>
+										<li>
+											<div class="col-lg-8 col-md-8 col-sm-8 no-padding-left rest-text">
+												<span class="pull-left main-criteria">0 children</span>
+												<span class="pull-right sub-criteria">age 2 - 12</span>
+											</div>
+											<div class="col-lg-4 col-md-4 col-sm-4 no-padding inc-dec">
+												<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">-</span>
+												<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">+</span>
+											</div> 
+										</li>
+										<li>
+											<div class="col-lg-8 col-md-8 col-sm-8 no-padding-left rest-text">
+												<span class="pull-left main-criteria">0 infants</span>
+												<span class="pull-right sub-criteria">under 2</span>
+											</div>
+											<div class="col-lg-4 col-md-4 col-sm-4 no-padding inc-dec">
+												<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">-</span>
+												<span class="col-lg-6 col-md-6 col-sm-6 col-xs-6 no-padding">+</span>
+											</div> 
+										</li>
+									</ul>
+									<span class="pull-right close-link">close</span>
+								</div>	
+							</div>
+							<div>
+								Bid Price
+								<span>$</span><input type="number" ng-model="vm.bid_value" class="form-control" name="" > 
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-6 booking-btn">
+							<button class="button-primary" ng-click="vm.authenticateUser()">Place Bid</button>
+						</div>
+						<p ng-if="vm.errMessage" class="text-center invalidinput">{{vm.errMessage}}</p>
+						<!-- <div class="viewed-section">
+							<p class="bold-font">This home is on people's minds.</p>
+							<p>It's been viewed 855 times in the past week</p>
+						</div> -->
+					</div>
+				</div>
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 about-this-section">
+					<h1>About this listing</h1>
+					<p>{{vm.property.description}}</p>
+					<span class="link">Contact host</span>
+				</div>
+			</div>
+		</div>
+	</div>
