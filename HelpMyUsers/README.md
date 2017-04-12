@@ -30,14 +30,12 @@ Helpmyusers changes the way of engagement with your customers and guide each use
 10] Include path to these javascripts and css in your website.<br />
 11] Enjoy the experience.<br />
 
-#Bluemix WebApp Link - 
-https://helpmyusers.mybluemix.net/
-<br />(WIP, please find below the snapshots for reference)
 
 ![flow chart](https://cloud.githubusercontent.com/assets/21249433/21291179/d35fc6a6-c48a-11e6-8ad6-4d7abe45ce5c.jpg)
 
 
 # Screen-captures of our web-app -
+![helpmyusers](https://cloud.githubusercontent.com/assets/22826481/24983529/6d091872-1f9c-11e7-810f-7ed9310e28f2.gif)
 ![2016-12-12](https://cloud.githubusercontent.com/assets/21249433/21160177/b5e07094-c138-11e6-9241-c5348730f762.png)
 ![2016-12-12 1](https://cloud.githubusercontent.com/assets/21249433/21160160/b594babe-c138-11e6-9f36-3869f2ae1cd1.png)
 ![2016-12-12 2](https://cloud.githubusercontent.com/assets/21249433/21160162/b5958d54-c138-11e6-940b-4b313488ac2c.png)
