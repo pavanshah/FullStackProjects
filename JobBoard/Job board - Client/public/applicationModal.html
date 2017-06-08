@@ -1,0 +1,31 @@
+<div class="modal-body" id="modal-body">
+   <div>
+
+      <section ng-if="vm.view=='application'">
+         
+         <div class="width-100 login-options-wrap">
+               {{vm.data.message.newmessage}}
+               <h4>Company: <span>{{vm.job.company.name}}</span></h4>
+               <h4>Job Description</h4>
+         		<span>{{vm.job.description}}</span>
+         		<button class="text-center login-option google" ng-click="vm.applyWithProfile()">Apply with Profile</button>	
+         </div>
+         <div class="or-wrapper text-center">
+         		<span class="or-text bold-font">or</span> 
+         		<hr></hr>
+         </div>
+         <div class="login-options-wrap">
+         		<button class="modal-btn-primary login-option" ng-click="vm.uploadResume()"><img class="glyphicon glyphicon-cloud-upload"">Attach Resume</button>
+         </div>
+       
+      </section>
+
+      <section ng-if="vm.view=='success'">
+         <div>
+            <h2> Greetings! You have successfully applied to this Job!</h2>
+            <button class="modal-btn-primary login-option" ng-click="vm.dismiss()"><img class="glyphicon glyphicon-cloud-upload"">Okay</button>    
+         </div>
+        
+      </section>
+   </div>
+</div>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="CommunityServer">
+<head>
+	<title></title>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+	
+	
+	<!-- <script src="bower_components/bootstrap/dist/css/bootstrap.min.css"></script> -->
+	<!-- <script src="vendor/jquery-migrate-1.2.1.min.js"></script> -->
+	
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Theme CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+	<script type="text/javascript" src="scripts/app.js"></script>
+	<script type="text/javascript" src="scripts/loginService.js"></script>
+	<script type="text/javascript" src="scripts/Login.controller.js"></script>
+	<script type="text/javascript" src="scripts/userHome.controller.js"></script>
+	<script type="text/javascript" src="scripts/moderator.controller.js"></script>
+	<script type="text/javascript" src="scripts/requestServiceModal.controller.js"></script>
+	<script type="text/javascript">
+		$(function() {
+
+    $('#login-form-link').click(function(e) {
+		$("#login-form").delay(100).fadeIn(100);
+ 		$("#register-form").fadeOut(100);
+		$('#register-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+	$('#register-form-link').click(function(e) {
+		$("#register-form").delay(100).fadeIn(100);
+ 		$("#login-form").fadeOut(100);
+		$('#login-form-link').removeClass('active');
+		$(this).addClass('active');
+		e.preventDefault();
+	});
+
+});
+
+		
+	</script>	
+</head>
+<body>
+
+
+	<div>
+		<ui-view></ui-view>
+
+	</div>
+</body>
+</html>
+

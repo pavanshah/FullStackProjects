@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="description" content="Avenger Admin Theme">
+    <meta name="author" content="KaijuThemes">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="bE5SZ0FYUjRVORcLCD80TRo3C1EWFGRMAHs9EDkaIFUkFAQBGDVrYQ==">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <title>Service Management</title>
+    <link href=".." rel="stylesheet">
+    <link href="css/css/bootstrap.css" rel="stylesheet">
+    <link href="css/css/css.css" rel="stylesheet">
+    <link href="css/css/css1.css" rel="stylesheet">
+    <link href="css/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/css/styles.css" rel="stylesheet">
+    <link href="css/css/style.min.css" rel="stylesheet">
+    <link href="css/css/prettify.css" rel="stylesheet">
+    <link href="css/css/blue.css" rel="stylesheet">
+    <link href="css/css/daterangepicker-bs3.css" rel="stylesheet">
+    <link href="css/css/fullcalendar.css" rel="stylesheet">
+    <link href="css/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="css/css/dataTables.fontAwesome.css" rel="stylesheet">
+    <link href="css/css/bootstrap.css" rel="stylesheet">
+    <link href="css/css/site.css" rel="stylesheet">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    
+
+</head>
+<body ng-app="serviceManagementapp" ng-controller="serviceCreator" ng-init="getAllServiceOwners(); getAllClusters();">
+
+<header id="topnav"
+        class="navbar navbar-midnightblue navbar-fixed-top clearfix"
+        role="banner">
+
+        <span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg"> <a
+                    data-toggle="tooltips" data-placement="right" title="Toggle Sidebar"><span
+                        class="icon-bg"><i class="fa fa-fw fa-bars"></i> </span> </a>
+        </span>
+    <a href="" style="font-size:18px;color:#ffffff;float: left;height:50px;padding:15px;line-height:20px;">CSNET</a>
+    <ul class="nav navbar-nav toolbar pull-right">
+
+        <li class="dropdown toolbar-icon-bgs">
+
+        </li>
+
+        <li><a href="/admin/logout"><span class="pull-left">Sign Out</span></a></li>
+
+    </ul>
+
+</header>
+
+<div id="wrapper">
+    <div id="layout-static">
+<div class="static-sidebar-wrapper sidebar-midnightblue">
+            <div class="static-sidebar">
+                <div class="sidebar">
+                    <div class="widget stay-on-collapse" id="widget-welcomebox">
+                        <div class="widget-body welcome-box tabular">
+                            <div class="tabular-row">
+                                <div class="tabular-cell welcome-avatar">
+                                    <a href="/admin/dashboard"><img src="images/profile.jpg" class="avatar"></a>
+                                </div>
+                                <div class="tabular-cell welcome-options">
+                                    <span class="welcome-text">Welcome,</span>
+                                    <a href="/admin/dashboard" class="name">Admin</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget stay-on-collapse" id="widget-sidebar">
+                        <nav role="navigation" class="widget-body">
+                            <ul class="acc-menu">
+                                <li class="nav-separator">Explore</li>
+
+
+                                <li><a href="/admin_dashboard"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                                </li>
+                               <!--  <li><a href="/admin_activeUserManagement"><i class="fa fa-users"></i><span>User Management</span></a>
+                                </li> -->
+
+                                
+                                <li><a href="javascript:void(0);"><i
+                                                class="fa fa-users"></i><span>Service Management</span></a>
+                                    <ul class="acc-menu">
+                                        <li>
+                                            <a href="/admin_serviceMgmt"><span>Active Services Management</span></a>
+                                        </li>
+                                        <li><a href="/admin_createService"><span>Create New Service</span></a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li><a href="javascript:void(0);"><i
+                                                class="fa fa-home"></i><span>Cluster Management</span></a>
+                                    <ul class="acc-menu">
+                                        <li class="active">
+                                            <a href="/admin_clusterMgmt"><span>Active Cluster Management</span></a>
+                                        </li>
+                                        <li><a href="/admin_createCluster"><span>Create New Cluster</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                               <!--  <li><a href="/admin_invoiceManagement"><i class="fa fa-barcode"></i><span>Invoice management</span></a>
+                                </li> -->
+
+                                <li><a href="javascript:void(0);"><i
+                                                class="fa fa-user"></i><span>Admin Management</span></a>
+                                    <ul class="acc-menu">
+                                        <li><a href="/viewAddAdminPage"><span>Add Admin</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logincontain" style="">
+        <div class="headercont"><b>Add New Service</b></div>
+        <div class="bodycont">
+        <!-- <form id="login-form" method="post" role="form" ng-submit="createService()"> -->
+           <form id="login-form" method="post" role="form"> 
+            
+            <p><input type="text" id="service_name" class="txtbox" placeholder="Service Name" ng-model="service_name"></p>
+
+            <p><input type="text" id="service_desc" class="txtbox" placeholder="Service Description" ng-model="service_desc"></p>
+           <!--  <p><input type="password" class="txtbox" placeholder="Moderator" ng-model="moderator"></p> -->
+            <p>
+                <select id="owner" class="txtbox" placeholder="Service Owner">
+                    <!-- <option value="AL">Alabama</option>
+                    <option value="WY">Wyoming</option> -->
+                    <option ng-repeat="x in serviceowners" placeholder="Service Owner" ng-model="service_owner" value="{{x.email}}">{{x.firstname}}</option>
+                </select>
+                <!-- <select ng-options="x as x.firstname for x in serviceowners" ng-model="service_owner"></select> -->
+            </p>
+            <p>
+             <select class="txtbox" id="clustersAdded" multiple="multiple" placeholder="Clusters">
+                <!-- <option value="AL">Alabama</option>
+                <option value="WY">Wyoming</option>
+                <option value="ML">Maryland</option>
+                <option value="OH">Ohio</option> -->
+                <option ng-repeat="x in clusters" placeholder="Clusters" value="{{x.cluster_id}}">{{x.cluster_name}}</option>
+            </select>
+            </p>
+
+            <!-- <p><input type="text" class="txtbox" placeholder="Services" ng-model="services"></p> -->
+            <!-- <p>
+            <select class="txtbox" id="clusterservices" multiple="multiple" placeholder="Services">
+                <option value="AL">Alabama</option>
+                <option value="WY">Wyoming</option>
+                <option value="ML">Maryland</option>
+                <option value="OH">Ohio</option>
+            </select>
+            </p> -->
+
+            <!-- <p><input type="text" class="txtbox" placeholder="Last Name" ng-model="lastName"></p>
+
+            <p><input type="text" class="txtbox" placeholder="Address" ng-model="address"></p>
+
+            <p><input type="text" class="txtbox" placeholder="City" ng-model="city"></p>
+
+            <p><input type="text" class="txtbox" placeholder="State" ng-model="state"></p>
+
+            <p><input type="number" class="txtbox" placeholder="Zip Code" ng-model="zip"></p>
+
+            <p><input type="number" class="txtbox" placeholder="Phone number" ng-model="contactNumber"></p> -->
+
+            <div class="form-group">
+                <button type="submit" class="btn-login" ng-click="createService()" name="login-button">Create Service</button>
+                <!-- <button type="submit" class="btn-login" name="login-button">Create Service</button> -->
+            </div>
+
+
+        </form>
+    </div>
+</div>
+        <script src="js/jquery.js"></script>
+        <script src="js/yii.js"></script></div>
+
+<!--script type="text/javascript" src="/admin/js/jquery-1.10.2.min.js"></script-->
+<script type="text/javascript" src="js/jqueryui-1.9.2.min.js"></script>
+<script type="text/javascript" src="js/admin.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.easypiechart.js"></script>
+<script type="text/javascript" src="js/jquery.sparklines.min.js"></script>
+<script type="text/javascript" src="js/jstree.min.js"></script>
+<script type="text/javascript" src="js/prettify.js"></script>
+<script type="text/javascript" src="js/bootstrap-switch.js"></script>
+<script type="text/javascript" src="js/bootstrap-tabdrop.js"></script>
+<script type="text/javascript" src="js/icheck.min.js"></script>
+<script type="text/javascript" src="js/enquire.min.js"></script>
+<script type="text/javascript" src="js/bootbox.js"></script>
+
+<script type="text/javascript" src="js/jquery.nanoscroller.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
+<script type="text/javascript" src="js/demo.js"></script>
+<script type="text/javascript" src="js/demo-switcher.js"></script>
+<script type="text/javascript" src="js/fullcalendar.min.js"></script>
+<script type="text/javascript" src="js/wijets.js"></script>
+<script type="text/javascript" src="js/chartist.min.js"></script>
+<script type="text/javascript" src="js/chartist-plugin-tooltip.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/daterangepicker.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="js/demo-datatables.js"></script>
+<script type="text/javascript" src="js/fileinput.min.js"></script>
+<script type="text/javascript" src="js/ckeditor.js"></script>
+
+<style type="text/css">
+    .alert-success {
+        /*position: absolute;*/
+        right: -50%;
+        width: 100%;
+        transition: all 0.5s !important;
+        overflow: hidden !important;
+    }
+
+    .flashcss {
+        right: 0%;
+    }
+</style>
+
+<style type="text/css">
+    .logincontain {
+        border-radius: 4px;
+        width: 33%;
+        margin: 100px auto;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    }
+
+    .headercont {
+        background: #f3f3f3;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .bodycont {
+        background: #ffffff;
+        padding: 15px;
+    }
+
+    .txtbox {
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        color: #555;
+        display: block;
+        font-size: 14px;
+        height: 34px;
+        line-height: 1.42857;
+        padding: 6px 12px;
+        transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+        width: 100%;
+    }
+
+    .btn-login {
+        background-color: #ff5a5f;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 14px !important;
+        font-weight: bold !important;
+        -moz-user-select: none;
+        border: 1px solid transparent;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.42857;
+        margin-bottom: 0;
+        padding: 6px 12px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 100%;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        setTimeout(function() {
+            $(".alert-success").css("display","none");
+        }, 3000);
+        $("#closebutton").click(function(){
+            $(".alert-success").css("display","none");
+        });
+    });
+</script>
+<script type="text/javascript">
+    function onchangelang(){
+        $( "#languagechange" ).submit();
+    }
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="angularjs/serviceMgmt.js"></script>
+
+</div>
+
+
+</body>
+</html>

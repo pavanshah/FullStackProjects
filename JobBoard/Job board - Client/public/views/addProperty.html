@@ -1,0 +1,589 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="../css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../css/carousel.css">
+	<link rel="stylesheet" type="text/css" href="../css/modal.css">
+	<link rel="stylesheet" type="text/css" href="../css/calendar.css">
+	<link rel="stylesheet" type="text/css" href="../css/addproperty.css">
+</head>
+<body>
+	<!-- Header -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar visible-xs"></span>
+	      </button>
+	      <img src="../images/airbnb-logo.png" class="logo hidden-xs"></img>
+	    </div>
+	    <div class="search-section">
+		    <form class="">
+                <input type="text" class="hidden-xs" force-selection="true" g-places-autocomplete ng-model="vm.location" placeholder="Where to?">
+                <img src="../images/search-icon.png" alt="search-icon" class="search-icon hidden-xs">
+                <!-- Open Search modal on click of btn for mobile resolution -->
+                <button class="visible-xs search-btn-mobile"><img src="../images/search-icon-mobile.png" alt="search-icon" class="">Where to?</button>
+                
+		    </form>
+		</div>    
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse no-transition" id="bs-example-navbar-collapse-1">
+	    	<div class="hamburger-content">
+	    		<ul class="nav navbar-nav navbar-right">
+	    			<li class="visible-xs"><a href="#"><span>Home</span></a></li>
+	    			<li class="visible-xs"><a href="#"><span>Download the App</span></a></li>
+			        <li class=""><a href="#"><span class="have-border">Become a Host</span></a></li>
+			        <li class="hidden-xs"><a href="#"><span>Help</span></a></li>
+			        <li class="" ng-click="vm.openSignupModal()"><a href=""><span>Sign Up</span></a></li>
+			        <li class="" ng-click="vm.openLoginModal()"><a href=""><span>Log In</span></a></li>
+			        <li class="visible-xs"><a href="#"><span>Discover</span></a></li>
+			        <li class="visible-xs"><a href="#"><span>Search</span></a></li>
+			        <li class="visible-xs"><a href="#"><span>How it Works</span></a></li>
+			        <li class="visible-xs"><a href="#"><span></span></a></li>
+			        <li class="visible-xs"><a href="#"><span>Help</span></a></li>
+		        </ul>
+	    	</div>	
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="addproperty-wrapper container-fluid">
+		<!-- form 1 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="placeForm">
+					<div class="add-form-wrapper pull-right col-lg-8 col-md-8 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">Where's your place located?</h4>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label>Country</label>
+							<select>
+								<option>United States</option>
+							</select>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label>Street Address</label>
+							<input type="text">
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label>Apt, Suite, Bldg. (optional)</label>
+							<input type="text" placeholder="e.g. Apt #7">
+						</div>
+						<div class="form-element col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-12">
+							<label>City</label>
+							<input type="text">
+						</div>
+						<div class="form-element col-lg-6 col-md-6 col-sm-6 col-xs-6 pad-12">
+							<label>State</label>
+							<input type="text">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">Your exact address will only be shared with confirmed guests.</p>
+					</div>
+					<div class="bottom-img-section">
+						<img src="../images/add-property/location.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- form-2 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="placeTypeForm">
+					<div class="add-form-wrapper pull-right col-lg-8 col-md-8 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">What kind of place are you listing?</h4>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label>What type of property is this?</label>
+							<select>
+								<option></option>
+							</select>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label>What will guests have?</label>
+							<select>
+								<option></option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading">Entire place</p>
+						<p class="hint-text">Guests will rent the entire place.</p>
+						<p class="hint-text">Includes in-law units.</p>
+					</div>
+					<div class="single-hint">
+						<p class="hint-heading">Private room</p>
+						<p class="hint-text">Guests share some spaces but they'll have their own private room for sleeping.</p>
+					</div>
+					<div class="single-hint">
+						<p class="hint-heading">Shared room</p>
+						<p class="hint-text">Guests don't have room to themselves.</p>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!-- form-3 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="guestCountForm">
+					<div class="add-form-wrapper pull-right col-lg-8 col-md-8 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">How many guests can your place accomodate?</h4>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label></label>
+							<div class="inc-dec-component">
+								<input type="text">
+								<div class="inc-dec-btn-wrapper">
+									<i class="fa fa-minus inc-dec-button" aria-hidden="true"></i>
+									<i class="fa fa-plus inc-dec-button active" aria-hidden="true"></i>
+								</div>
+							</div>
+							<select>
+								<option>Real Bed</option>
+							</select>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label>How many guests can stay?</label>
+							<div class="inc-dec-component">
+								<input type="text">
+								<div class="inc-dec-btn-wrapper">
+									<i class="fa fa-minus inc-dec-button" aria-hidden="true"></i>
+									<i class="fa fa-plus inc-dec-button active" aria-hidden="true"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">The number and type of beds you have determines how many guests can stay comfortably.</p>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!-- form-4 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="BathroomCountForm">
+					<div class="add-form-wrapper pull-right col-lg-8 col-md-8 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">How many bathrooms?</h4>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label></label>
+							<div class="inc-dec-component">
+								<input type="text" value="1 bathroom">
+								<div class="inc-dec-btn-wrapper">
+									<i class="fa fa-minus inc-dec-button" aria-hidden="true"></i>
+									<i class="fa fa-plus inc-dec-button active" aria-hidden="true"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs hidden-xs right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">If you have a toilet separate from the shower, count it as 0.5 bathroom.</p>
+					</div>
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">Count only the bathrooms guests can use.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- form-5 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="amenitiesForm">
+					<div class="add-form-wrapper pull-right col-lg-8 col-md-8 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">What amenities do you offer?</h4>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="essentials" class="checkbox-label">
+						        <input type="checkbox" id="essentials" name="" >
+						        Essentials
+						        <p class="no-margin	items">Towels, bed sheets, soap, and toilet paper</p>
+						    </label>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="wifi" class="checkbox-label">
+						        <input type="checkbox" id="wifi" name="" >
+						        Wifi
+						    </label>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="shampoo" class="checkbox-label">
+						        <input type="checkbox" id="shampoo" name="" >
+						        Shampoo
+						    </label>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="drawers" class="checkbox-label">
+						        <input type="checkbox" id="drawers" name="" >
+						        Closet/drawers
+						    </label>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="tv" class="checkbox-label">
+						        <input type="checkbox" id="tv" name="" >
+						        TV
+						    </label>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="heat" class="checkbox-label">
+						        <input type="checkbox" id="heat" name="" >
+						        Heat
+						    </label>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="ac" class="checkbox-label">
+						        <input type="checkbox" id="ac" name="" >
+						        Air conditioning
+						    </label>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="breakfast" class="checkbox-label">
+						        <input type="checkbox" id="breakfast" name="" >
+						        Breakfast, coffe, tea
+						    </label>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">Providing the essentials helps guests feel at home in your place.</p>
+					</div>
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">Some host provide breakfast, or just coffee and tea. None of these things are required, but sometimes they add a nice touch to help guests feel welcome.</p>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!-- form-6 -->
+		<div class="width-100 make-table upload-foto-bg clearfix">
+			<div class="upload-photo-section">
+				<h4 class="pad-12">Photos
+					<img class="pull-right" src="../images/add-property/hint-bulb.png">
+				</h4>
+				<div class="upload-foto-placeholder">
+					<img src="../images/add-property/upload-photo-default-img.png">
+					<div class="upload-btn-wrapper">
+						<button class="button-primary">Upload Photos</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- form-7 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="placespecialityForm">
+					<div class="add-form-wrapper pull-right col-lg-8 col-md-8 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">Start building your description</h4>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<input type="text" placeholder="My place is close to">
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<input type="text" placeholder="You'll love my place because of">
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<p class="place-good-heading">My place is good for</p>
+							<label for="couples" class="checkbox-label">
+						        <input type="checkbox" id="couples" name="" >
+						        Couples
+						    </label>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="Solo" class="checkbox-label">
+						        <input type="checkbox" id="Solo" name="" >
+						        Solo adventures
+						    </label>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="business" class="checkbox-label">
+						        <input type="checkbox" id="business" name="" >
+						        Business travelers
+						    </label>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="Families" class="checkbox-label">
+						        <input type="checkbox" id="Families" name="" >
+						        Families (with kids)
+						    </label>
+						</div>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<label for="biggroups" class="checkbox-label">
+						        <input type="checkbox" id="biggroups" name="" >
+						        Big groups
+						    </label>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">This description will appear at the top of your listing page. We've started you out with a few common questions guests have when looking for a place. You'll be able to edit and write more next</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- form-8 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="editdescForm">
+					<div class="add-form-wrapper pull-right col-lg-8 col-md-8 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">Edit your description</h4>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<input type="text" value="Test">
+							<span class="char-remaining">496</span>
+							<img  class="refresh-img" src="../images/add-property/refresh.png">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">Based on what you chose, this is your summary description. You can edit and change it as you see fit. Keeping it as a brief overview makes it easier for guests to read.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- form-9 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="placeNameForm">
+					<div class="add-form-wrapper pull-right col-lg-8 col-md-8 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">Name your place</h4>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12">
+							<input type="text" value="Listing title">
+							<span class="char-remaining">50</span>	
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">There are few examples from listings nearby</p>
+					</div>
+					<div class="single-hint">
+						<div class="width-100 clearfix">
+							<img class="listing-hint-thumbnail" src="../images/add-property/bed.png" alt="listing images">
+							<p class="nearby-list-description hint-text">Nature's retreat in the capital of silicon valley</p>
+						</div>
+						<div class="width-100 clearfix">
+							<img class="listing-hint-thumbnail" src="../images/add-property/bed.png" alt="listing images">
+							<p class="nearby-list-description hint-text">Private room with Cal-king Bed and Private Bath</p>
+						</div>
+						<div class="width-100 clearfix">
+							<img class="listing-hint-thumbnail" src="../images/add-property/bed.png" alt="listing images">
+							<p class="nearby-list-description hint-text">Comfy bed in Santa Clara CA</p>
+						</div>
+					</diV>
+				</div>
+			</div>
+		</div>
+		<!-- form-10 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="ownerphotoForm">
+					<div class="add-form-wrapper pull-right col-lg-7 col-md-7 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">Add your photo</h4>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12 owner-selfdetails-section">
+							<img class="photo-placeholder" src="../images/add-property/load-photo.png">
+							<button class="fb"><img class="media-icon pull-left" src="../images/modal-images/fb.png">Use Facebook Photo</button>	
+							<button class="btn-main">Upload Photo</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">Everyone on Airbnb has a profile photo, including your guests. This way you know who's coming, and guests know that they're dealing with a real person too.</p>	
+					</div>
+					<div class="single-hint">
+						<p class="hint-text">Make sure  the photo clearly shows your face.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- form-11 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="ownerContactForm">
+					<div class="add-form-wrapper pull-right col-lg-7 col-md-7 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">Add your mobile number</h4>
+						<div class="form-element col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-12 owner-selfdetails-section mobile">
+							<img class="photo-placeholder" src="../images/add-property/contact-img.png">
+							<div class="code-n-no-wrapper">
+								<span class="country-code">+1</span>
+								<input class="mobile-number-field" type="number">
+							</div>
+							<p class="change-country-wrapper">Not in United States? <span class="change-country-link">Change country</span></p>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">Only confirmed guests get your phone number. This helps guests contact you quickly if needed.</p>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- form-12 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="stayPeriodForm">
+					<div class="add-form-wrapper pull-right col-lg-7 col-md-7 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">How long can guests stay?</h4>
+						<div class="form-element col-lg-8 col-md-8 col-sm-12 col-xs-12 pad-12">
+							<div class="inc-dec-component">
+								<input type="text" value="4 nights min">
+								<div class="inc-dec-btn-wrapper">
+									<i class="fa fa-minus inc-dec-button" aria-hidden="true"></i>
+									<i class="fa fa-plus inc-dec-button active" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="inc-dec-component top-spacing">
+								<input type="text" value="nights max">
+								<div class="inc-dec-btn-wrapper">
+									<i class="fa fa-minus inc-dec-button" aria-hidden="true"></i>
+									<i class="fa fa-plus inc-dec-button active" aria-hidden="true"></i>
+								</div>
+							</div>
+							<p class="tips-section">
+								<span class="tip-label">Tip: </span>Shorter trips can mean more reservations, but you might have to turn over your space more often.
+							</p>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">Only confirmed guests get your phone number. This helps guests contact you quickly if needed.</p>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- form-13 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="basePriceForm">
+					<div class="add-form-wrapper pull-right col-lg-7 col-md-7 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">Base price</h4>
+						<p class="pad-12">Your base price is your default nightly rate.</p>
+						<div class="form-element col-lg-8 col-md-8 col-sm-12 col-xs-12 pad-12 base-price-section">
+							<label>Base price</label>
+							<input type="text" placeholder="$ per night">
+							<p class="tips-section width-100">
+								<span class="tip-label">Tip: $41.Set</span>
+							</p>
+						</div>
+						<div class="form-element col-lg-8 col-md-8 col-sm-12 col-xs-12 pad-12">
+							<label>Currency</label>
+							<select>
+								<option>USD</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading">Base nightly price</p>
+						<p class="hint-text">Some hosts starts of with a lower price and raise after earning positive reviews.</p>	
+					</div>
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">You can always change your price in response to demand. For example: a higher price may help you earn more during busy travel seasons, while a lower price may get you more reservations when it's is slow.</p>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- form-14 -->
+		<div class="width-100 make-table clearfix">
+			<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 no-padding left-section">
+				<form name="additionalPriceForm">
+					<div class="add-form-wrapper pull-right col-lg-7 col-md-7 col-sm-10 col-xs-12 pad-12">
+						<h4 class="pad-12">Additional pricing</h4>
+						<p class="pad-12 bold-font">Discount for longer stays</p>
+						<div class="form-element col-lg-8 col-md-8 col-sm-12 col-xs-12 pad-12 base-price-section">
+							<label>Weekly discount</label>
+							<input type="text" placeholder="% off">
+							<p class="tips-section width-100">
+								<span class="tip-label">Tip: 21%.Set</span>
+							</p>
+						</div>
+						<div class="form-element col-lg-8 col-md-8 col-sm-12 col-xs-12 pad-12 base-price-section">
+							<label>Monthly discount</label>
+							<input type="text" placeholder="% off">
+							<p class="tips-section width-100">
+								<span class="tip-label">Tip: 49%.Set</span>
+							</p>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs no-padding right-section">
+				<div class="info-window">
+					<img src="../images/add-property/hint-bulb.png">
+					<div class="single-hint">
+						<p class="hint-heading">Discount for longer stays</p>
+						<p class="hint-text">To encourage longer stays, some hosts set a weekly or monthly discount. If you want your listing to appear in searches for reservations of 28 nights or more, set a monthly discount.</p>	
+					</div>
+					<div class="single-hint">
+						<p class="hint-heading"></p>
+						<p class="hint-text">Weekly discount will apply to any reservation of 7 to 27 nights.</p>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

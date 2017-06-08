@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--[if IE 7]>                  <html class="ie7 no-js" lang="en">     <![endif]-->
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="not-ie no-js" lang="en">  <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+	================================================== -->
+	<meta charset="utf-8">
+	<title>Job List | Job Board </title>
+	
+
+	<!-- Mobile Specific Metas
+	================================================== -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	
+	
+	
+	<!-- CSS
+	================================================== -->
+	<!-- Base + Vendors CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/fonts/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="css/fonts/entypo/css/entypo.css">
+	<link rel="stylesheet" href="vendor/owl-carousel/owl.carousel.css" media="screen">
+	<link rel="stylesheet" href="vendor/owl-carousel/owl.theme.css" media="screen">
+	<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css" media="screen">
+	<link rel="stylesheet" href="vendor/flexslider/flexslider.css" media="screen">
+	<link rel="stylesheet" href="vendor/job-manager/frontend.css" media="screen">
+
+	<!-- Theme CSS-->
+	<link rel="stylesheet" href="css/theme.css">
+	<link rel="stylesheet" href="css/theme-elements.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+   
+
+  <!-- Head Libs -->
+	<script src="vendor/modernizr.js"></script>
+
+	
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicons/favicon.ico">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/favicons/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/favicons/favicon-152.png">
+	
+</head>
+<body>
+
+	<div class="site-wrapper">
+
+		<!-- Header -->
+		<header class="header header-menu-fullw">
+
+			<!-- Header Top Bar -->
+			<div class="header-top">
+				<div class="container">
+					<div class="header-top-left">
+						<button class="btn btn-sm btn-default menu-link menu-link__secondary">
+							<i class="fa fa-bars"></i>
+						</button>
+						<div class="menu-container">
+							
+						</div>
+					</div>
+					<div class="header-top-right">
+						<button class="btn btn-sm btn-default menu-link menu-link__tertiary">
+							<i class="fa fa-user"></i>
+						</button>
+						<div class="menu-container">
+							<ul class="header-top-nav header-top-nav__tertiary">
+								<li><a ui-sref="jobseekerApplications"><i class="fa fa-user-plus"></i> Applications</a></li>
+								<li><a ui-sref="jobseekerInterestedJobs"><i class="fa fa-user-plus"></i> Starred Jobs</a></li>
+								<li><a ui-sref="updateJobSeeker"><i class="fa fa-user-plus"></i>Update Profile</a></li>
+								<li><a ng-click="vm.logout()"><i class="fa fa-sign-in"></i> Logout</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Header Top Bar / End -->
+			<div class="header-main">
+				<div class="container">
+					<!-- Logo -->
+					<div class="logo">
+						
+						<h1><a href="index.html"><span>Job</span>Board</a></h1>
+					</div>
+					<!-- Logo / End -->
+
+					<button type="button" class="navbar-toggle">
+						<i class="fa fa-bars"></i>
+					</button>
+
+					<!-- Navigation -->
+					<nav class="nav-main">
+						<div class="nav-main-inner">
+							
+						</div>
+					</nav>
+					<!-- Navigation / End -->
+
+				</div>
+			</div>
+			
+		</header>
+		<!-- Header / End -->
+
+
+		<!-- Main -->
+		<div class="main" role="main">
+
+			<!-- Slider -->
+			<section class="slider-holder" >
+				<div class="flexslider carousel">
+					<ul class="slides" >
+						<li>
+							<img src="images/samples/slide1.jpg" alt="" />
+						</li>
+						
+					</ul>
+
+					<div class="search-box" style="top: 30%; height: 100px">
+						<div class="container">
+							<div class="search-box-inner">
+								<h1>Search for Jobs</h1>
+								<form >
+									<div class="row">
+										<div class="col-md-3">
+											<div class="select-style" ng-if="false">
+												<select class="form-control" ng-options="option for option in vm.data.searchList" ng-model="vm.data.selectedSearchList" ng-change="vm.changeOfSearchType()" value="option">
+													<option value="">Search by ...</option>
+												</select> 
+											</div>
+										</div>
+									</div>
+									<br/>
+									<div class="row" ng-show="true">
+										<div class="col-md-3">
+											<div class="form-group">
+												<input type="text" ng-model="vm.data.searchText" class="form-control" placeholder="Enter text to search">
+											</div>
+										</div>
+										<div class="col-md-1">
+											<a ng-click="vm.getSearchResultsByText()" class="btn btn-primary btn-block"><i class="fa fa-search"></i></a>
+										</div>
+									</div>
+
+									<div class="row" ng-hide="false">
+										<div class="col-md-2 col-md-offset-8">
+											<font color="white">OR provide a range for salary.</font>
+										</div>
+									</div>
+
+									<div class="row" ng-hide="false">
+										<div class="col-md-3 ">
+											<div class="form-group">
+												<div class="select-style">
+													<select class="form-control" ng-options="option for option in vm.data.locationList" ng-model="vm.data.selectedLocationList" multiple="multiple">
+														<option value="">All Locations</option>
+														
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-3">
+											<div class="form-group">
+												<div class="select-style">
+													<select class="form-control" ng-options="option.name for option in vm.data.companyList" ng-model="vm.data.selectedCompanyList" multiple="multiple" value="option.name">
+														<option value="">All Companies</option>
+														
+													</select> 
+												</div>
+											</div>
+										</div>
+										<div class="col-md-2">
+											<div class="form-group">
+												<input type="text" ng-model="vm.data.searchSalarySingleVal" class="form-control" placeholder="Enter exact salary">
+											</div>
+										</div>
+										<div class="col-md-2">
+											<div class="form-group">
+												<input type="text" ng-model="vm.data.searchRangeStart" class="form-control" placeholder="Range Start">
+												<br/>
+												<input type="text" ng-model="vm.data.searchRangeEnd" class="form-control" placeholder="Range End">
+
+											</div>
+										</div>
+										<div class="col-md-1">
+											<a ng-click="vm.getSearchResultsByFilter()" class="btn btn-primary btn-block"><i class="fa fa-search"></i></a>
+										</div>
+
+									</div>
+								</form>
+
+								
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+			<!-- Slider / End -->
+
+			<!-- Page Content -->
+			<section class="page-content">
+				<div class="container">
+					
+					<div class="job_listings">
+						<!--<form class="job_filters">
+
+							<div class="search_jobs">
+								<div class="search_keywords">
+									<label for="search_keywords">Keywords</label>
+									<input type="text" name="search_keywords" id="search_keywords" placeholder="All Jobs" class="form-control" value="" />
+								</div>
+
+								<div class="search_location">
+									<label for="search_location">Location</label>
+									<input type="text" name="search_location" id="search_location" placeholder="Any Location" class="form-control" value="" />
+								</div>
+
+								<div class="search_type">
+									<label>Companies</label>
+									<span class="select-style">
+										<select class="form-control">
+											<option>All Companies</option>
+											<option>Google</option>
+											<option>Microsoft</option>
+											<option>Apple</option>
+											<option>Amazon</option>
+										</select>
+									</span>
+								</div>
+
+								<div class="search_submit">
+									<label>Submit</label>
+									<button class="btn btn-block btn-primary"><i class="fa fa-search"></i></button>
+								</div>
+							</div>
+						</form>-->
+						<ul>
+							<label> {{vm.data.message}}</label>
+						</ul>
+						<ul class="job_listings">
+							<li class="job_listing" ng-repeat="job in vm.searchResults.slice(((vm.currentPage-1)*vm.itemsPerPage), ((vm.currentPage)*vm.itemsPerPage))">
+								<a href="">
+									<div class="job_img">
+										<img src="images/samples/person1.jpg" alt="" class="company_logo">
+									</div>
+									<div class="position">
+
+										<h3>{{job.title}}</h3>
+										<div class="company">
+											<strong>{{job.company.name}}</strong>
+										</div>
+										<span href="" ng-if="job.isInterested" ng-click="vm.toggleInterested(job)">Remove from interested? </span>
+										<span href="" ng-if="!job.isInterested" ng-click="vm.toggleInterested(job)"> Mark as interested?</span>
+										<span href="" ng-if="true" ng-click="vm.openApplicationModal(job)"><u>Apply</u></span>
+									</div>
+									<div class="location">
+										<i class="fa fa-location-arrow"></i> {{job.officeLocation}}
+									</div>
+									<div class="rating">
+										<div class="rating-stars">
+										</div>
+										
+									</div>
+									<ul class="meta">
+										<li class="job-type">Status</li>
+										<li class="date">
+											{{job.status}}
+										</li>
+										<span ></span>
+									</ul>
+								</a>
+							</li>
+
+							
+							
+						</ul>
+						<ul uib-pager items-per-page="vm.itemsPerPage" total-items="vm.searchResults.length" ng-model="vm.currentPage"></ul>
+					</div>
+
+					<!-- <div class="spacer"></div>
+
+					<div class="row">
+						<div class="col-md-4 col-md-offset-4">
+							<a class="btn btn-default btn-block" href="#">Load more job listings</a>
+						</div>
+					</div>
+ -->
+				</div>
+			</section>
+			<!-- Page Content / End -->
+
+			<!-- Footer -->
+			
+			<!-- Footer / End -->
+			
+		</div>
+		<!-- Main / End -->
+	</div>
+	
+	
+	
+	
+	
+	<!-- Javascript Files
+	================================================== -->
+	<script src="vendor/jquery-1.11.0.min.js"></script>
+	<script src="vendor/jquery-migrate-1.2.1.min.js"></script>
+	<script src="vendor/bootstrap.js"></script>
+	<script src="vendor/jquery.flexnav.min.js"></script>
+	<script src="vendor/jquery.hoverIntent.minified.js"></script>
+	<script src="vendor/jquery.flickrfeed.js"></script>
+	<script src="vendor/magnific-popup/jquery.magnific-popup.js"></script>
+	<script src="vendor/owl-carousel/owl.carousel.min.js"></script>
+	<script src="vendor/jquery.fitvids.js"></script>
+	<script src="vendor/jquery.appear.js"></script>
+	<script src="vendor/jquery.stellar.min.js"></script>
+	<script src="vendor/jquery.countTo.js"></script>
+
+	<!-- Newsletter Form -->
+	<script src="vendor/jquery.validate.js"></script>
+	<script src="js/newsletter.js"></script>
+
+	<script src="js/custom.js"></script>
+
+
+	
+</body>
+</html>
